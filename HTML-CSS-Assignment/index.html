@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Flipkart</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Icon css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        #search{
+            /* width: 500px; */
+        }
+        
+        
+        </style>
+        <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- nav bar and category -->
+    <header >
+        <nav id="desktop-nav">
+            <div class="nav-main">
+                <div class="nav-item" id="logo">
+                    <img src="./assets /flipkart-logo.png" alt=""><br>
+                    <div id="explore" >
+                        Explore <span style="color:yellow">Plus</span>
+                        <img style="width:11px" src="./assets /plus.png" alt="">
+                    </div>
+                </div>
+                <div class="nav-item" style="display: flex; align-items: center; width:35%; ">
+                    <input type="text" name="search" id="search" placeholder="Search for products,brands and more">
+                    <svg id="search-icon" width="20" height="20" viewBox="0 0 17 18" class="" xmlns="http://www.w3.org/2000/svg"><g fill="#2874F1" fill-rule="evenodd"><path class="_34RNph" d="m11.618 9.897l4.225 4.212c.092.092.101.232.02.313l-1.465 1.46c-.081.081-.221.072-.314-.02l-4.216-4.203"></path><path class="_34RNph" d="m6.486 10.901c-2.42 0-4.381-1.956-4.381-4.368 0-2.413 1.961-4.369 4.381-4.369 2.42 0 4.381 1.956 4.381 4.369 0 2.413-1.961 4.368-4.381 4.368m0-10.835c-3.582 0-6.486 2.895-6.486 6.467 0 3.572 2.904 6.467 6.486 6.467 3.582 0 6.486-2.895 6.486-6.467 0-3.572-2.904-6.467-6.486-6.467"></path></g></svg>
+                </div>
+                <div class="nav-item" style="margin-left: 15px;">
+                    <a href="./index.html" id="login">
+                        Login
+                    </a>
+                </div>
+                <div class="nav-item">
+                    <div class="more" >
+                        <span>More</span>
+                        <img id="down-arrow" src="./assets /icons8-down-arrow-32.png" alt=""><br>
+                        <div id="dropdownmore">
+                            <p><i class="fa">&#xf0f3;</i><span class="dd-item-name">Notification Preference</span></p>
+                            <p><i class="fa">&#xf059;</i><span class="dd-item-name">24 * 7 Customer </span></p>
+                            <p><i class="fa">&#xf201;</i><span class="dd-item-name">Advertise</span></p>
+                            <p><i class="fa">&#xf019;</i><span class="dd-item-name">Download App</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="nav-item">
+                    <div class="cart">
+                        <svg style="width:25px" class="V3C5bO" width="14" height="14" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path class="_1bS9ic" d="M15.32 2.405H4.887C3 2.405 2.46.805 2.46.805L2.257.21C2.208.085 2.083 0 1.946 0H.336C.1 0-.064.24.024.46l.644 1.945L3.11 9.767c.047.137.175.23.32.23h8.418l-.493 1.958H3.768l.002.003c-.017 0-.033-.003-.05-.003-1.06 0-1.92.86-1.92 1.92s.86 1.92 1.92 1.92c.99 0 1.805-.75 1.91-1.712l5.55.076c.12.922.91 1.636 1.867 1.636 1.04 0 1.885-.844 1.885-1.885 0-.866-.584-1.593-1.38-1.814l2.423-8.832c.12-.433-.206-.86-.655-.86" fill="#fff"></path></svg>
+                        Cart
+                    </div>
+                </div>
+            </div>   
+        </nav>
+        
+        <!--------------- Second Header -------------------->
+
+        <nav id="mobile-header">
+            <div class="nav-main2">
+                <div class="nav-item2">
+                    <div style="float:left;margin-left: 20px;">
+                        <div class="three-line"></div>
+                        <div class="three-line"></div>
+                        <div class="three-line"></div>
+                    </div>
+                    <div id="logo" style="float:left; margin-left: 40px;">
+                        <img src="./assets /flipkart-logo.png" alt=""><br>
+                        <div id="explore" >
+                            Explore <span style="color:yellow">Plus</span>
+                            <img style="width:11px" src="./assets /plus.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="nav-item2">
+                    <a href="login" style="color:white; margin-right:20px; float:right;text-decoration: none;">login</a>
+                    <div class="cart" style="float:right; display:inline-block;margin: 0px 5px;">
+                        <svg style="width:25px; " class="V3C5bO" width="14" height="14" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path class="_1bS9ic" d="M15.32 2.405H4.887C3 2.405 2.46.805 2.46.805L2.257.21C2.208.085 2.083 0 1.946 0H.336C.1 0-.064.24.024.46l.644 1.945L3.11 9.767c.047.137.175.23.32.23h8.418l-.493 1.958H3.768l.002.003c-.017 0-.033-.003-.05-.003-1.06 0-1.92.86-1.92 1.92s.86 1.92 1.92 1.92c.99 0 1.805-.75 1.91-1.712l5.55.076c.12.922.91 1.636 1.867 1.636 1.04 0 1.885-.844 1.885-1.885 0-.866-.584-1.593-1.38-1.814l2.423-8.832c.12-.433-.206-.86-.655-.86" fill="#fff"></path></svg>
+                    </div>
+                </div>
+            </div>   
+            <div class="nav-item" style="display: flex; align-items: center; width:100%; ">
+                <input type="text" name="search" id="search" placeholder="Search for products,brands and more">
+                <svg id="search-icon" width="20" height="20" viewBox="0 0 17 18" class="" xmlns="http://www.w3.org/2000/svg"><g fill="#2874F1" fill-rule="evenodd"><path class="_34RNph" d="m11.618 9.897l4.225 4.212c.092.092.101.232.02.313l-1.465 1.46c-.081.081-.221.072-.314-.02l-4.216-4.203"></path><path class="_34RNph" d="m6.486 10.901c-2.42 0-4.381-1.956-4.381-4.368 0-2.413 1.961-4.369 4.381-4.369 2.42 0 4.381 1.956 4.381 4.369 0 2.413-1.961 4.368-4.381 4.368m0-10.835c-3.582 0-6.486 2.895-6.486 6.467 0 3.572 2.904 6.467 6.486 6.467 3.582 0 6.486-2.895 6.486-6.467 0-3.572-2.904-6.467-6.486-6.467"></path></g></svg>
+            </div>
+        </nav>
+
+    <!-- Second Header Complete  -->
+    
+        
+        <!-- -------------------   category  ------------------------------>
+        
+        <div class="categories" style="display: flex; justify-content: center; flex-wrap: wrap; border-bottom: 1px solid rgb(221, 220, 220);">
+            <div class="category" >
+                <img src="./assets /abc.png" alt="abc">
+                <div class="category-name" >Grocery</div>
+            </div>
+
+            <div class="category" >
+                <img src="./assets /abc1.png" alt="abc">
+                <div class="category-name" >Mobiles</div>
+            </div>
+            
+            <div class="category" >
+                <img src="./assets /fashion.png" alt="abc">
+                <div class="category-name" >Fashion</div>
+            </div>
+            
+            <div class="category" >
+                <img src="./assets /laptop.png" alt="abc">
+                <div class="category-name" >Electronics</div>
+            </div>
+            <div class="category" >
+                <img src="./assets /home.jpg" alt="abc">
+                <div class="category-name" >Home</div>
+            </div>
+            
+            <div class="category" >
+                <img src="./assets /wm.png" alt="abc">
+                <div class="category-name" >Appliances</div>
+            </div>
+            
+            <div class="category" >
+                <img src="./assets /aeroplane.png" alt="abc">
+                <div class="category-name" >Travel</div>
+            </div>
+
+            <div class="category" >
+                <img src="./assets /top-offer.png" alt="abc">
+                <div class="category-name" >Top Offers</div>
+            </div>
+
+            <div class="category" >
+                <img src="./assets /toy.png" alt="abc">
+                <div class="category-name" >Beauty, toys & More</div>
+            </div>
+
+            <div class="category" >
+                <img src="./assets /two-wheeler.png" alt="abc">
+                <div class="category-name" >Two Wheelers</div>
+            </div>
+        </div>
+    </header>
+
+    
+    <div style="background-color: #f0f0f0;">
+        <br>
+        <br>
+        <!-- Advertisement Carousel -->
+
+        <div id="demo" class="carousel slide" data-bs-ride="carousel" style="width: 90%; margin:auto; ">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="./assets /a.png" alt="Los Angeles" class="d-block w-100 ">
+                </div>
+        
+                <div class="carousel-item">
+                    <img src="./assets /b.png" alt="New York" class="d-block w-100">
+                </div>
+
+                <div class="carousel-item">
+                    <img src="./assets /b.png" alt="New York" class="d-block w-100">
+                </div>
+            </div>
+    
+    
+            <!-- Left and right controls/icons -->
+    
+            <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" style="background-color:gray"></span>
+            </button>
+    
+            <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+            <span class="carousel-control-next-icon" style="background-color:gray"></span>
+            </button>
+        </div>   
+
+        <!------------  Small Advertisement -------------->
+        <br>
+        <div style="width: 90%; margin:auto;display: flex;justify-content: center;background-color:white;padding: 20px;">   
+           <div class="border" style="width:auto;  padding:20px;">
+            <img src="./assets /ad1.png" alt="" style="max-width:100%;height:auto;">
+           </div>   
+        </div>   
+        
+        <!------------------ Top Offers and Item Carousel --------------->
+        <br>
+        <section  style="width: 90%; margin:auto;display: flex;justify-content: space-between;flex-wrap: wrap;background-color:white;  ">   
+            <div class="top-offers">
+                <div class="top-offers-heading">
+                    <h3>Top Offeres</h3>
+                    <button class="btn btn-primary" style="font-size:15px">
+                        VIEW ALL
+                    </button>
+                </div>
+                
+                <div class="temp">
+                    <img src="https://rukminim1.flixcart.com/fk-p-flap/278/278/image/1e483f8045ec13a8.jpg?q=90" alt="">
+                </div>
+            </div>
+            <div class="main-content">
+                <main>
+                    <div class="dod" style=" background-color: white; ">
+                        <div id="demo2" class="carousel slide" data-bs-ride="carousel">
+                
+                        <!----------------- The slideshow/carousel --------------->
+                
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="items">
+                                    <div class="item" id="i1">
+                                        <img class="item-img" src="./assets /watch.jpeg" alt="watch">
+                                        <p class="item-name">Casio,Fastrack,Sonata..</p>
+                                        <p class="item-offer">Upto 80%+Extra 10%Off</p>
+                                        <p class="item-tag">Knockout Deals</p>
+                                    </div>
+                                    <div class="item" id="i2">
+                                        <img class="item-img" src="./assets /home-temple.jpeg" alt="watch">
+                                        <p class="item-name">Home Temples & more</p>
+                                        <p class="item-offer">Extra 10% Off</p>
+                                        <p class="item-tag">Space saving furniture</p>
+                                    </div>
+                                    <div class="item" id="i3">
+                                        <img class="item-img" src="./assets /premium-tablet.jpeg" alt="watch">
+                                        <p class="item-name">Premium Tablet </p>
+                                        <p class="item-offer">Extra 10% Off</p>
+                                        <p class="item-tag">For All Top models</p>
+                                    </div>
+                                    <div class="item" id="i4">
+                                        <img class="item-img" src="./assets /best-home-decor.jpeg" alt="watch">
+                                        <p class="item-name">Best of Home Decor</p>
+                                        <p class="item-offer">From 79</p>
+                                        <p class="item-tag">Lowest Price Ever</p>
+                                    </div>
+                                    <div class="item" id="i5"   >
+                                        <img class="item-img" src="./assets /metronaut.jpeg" alt="watch">
+                                        <p class="item-name">Metronaut, provogue & ...</p>
+                                        <p class="item-offer">From 249 + Extra 10%Off</p>
+                                        <p class="item-tag">Jackets,Dresses & More</p>
+                                    </div>
+                                </div>  
+                            </div>  
+                    
+                            <div class="carousel-item">
+                                <div class="items">
+                                    <div class="item" id="i1">
+                                        <img class="item-img"  src="./assets /premium-tablet.jpeg" alt="watch">
+                                        <p class="item-name">Premium Tablet </p>
+                                        <p class="item-offer">Extra 10% Off</p>
+                                        <p class="item-tag">For All Top models</p>
+                                    </div>
+                                    <div class="item" id="i2">
+                                        <img class="item-img" src="./assets /best-home-decor.jpeg" alt="watch">
+                                        <p class="item-name">Best of Home Decor</p>
+                                        <p class="item-offer">From 79</p>
+                                        <p class="item-tag">Lowest Price Ever</p>
+                                    </div>
+                                    <div class="item" id="i3">
+                                        <img class="item-img" src="./assets /metronaut.jpeg" alt="watch">
+                                        <p class="item-name">Metronaut, provogue & ...</p>
+                                        <p class="item-offer">From 249 + Extra 10%Off</p>
+                                    <p class="item-tag">Jackets,Dresses & More</p>
+                                </div>
+                                <div class="item" id="i4">
+                                    <img class="item-img" src="./assets /lava.jpeg" alt="watch">
+                                    <p class="item-name">LAVA A1500</p>
+                                    <p class="item-offer">Flat 830 off</p>
+                                    <p class="item-tag">Now 999</p>
+                                </div>
+                                <div class="item" id="i5">
+                                    <img class="item-img" src="./assets /lava.jpeg" alt="watch">
+                                    <p class="item-name">LAVA A1500</p>
+                                    <p class="item-offer">Flat 830 off</p>
+                                    <p class="item-tag">Now 999</p>
+                                </div>
+                            </div>
+                            </div>
+                            
+                        </div>
+                
+                        
+                        <!-- Left and right controls/icons -->
+                        
+                        <button class="carousel-control-prev" type="button" data-bs-target="#demo2" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" style="background-color:gray"></span>
+                        </button>
+                
+                        <button class="carousel-control-next" type="button" data-bs-target="#demo2" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" style="background-color:gray"></span>
+                        </button>
+                    </div> 
+                </div>
+            </main>
+            
+            </div>
+            <div class="top-add">
+                <img src="./assets /boat.png" alt="" style="width: 100%;">
+            </div>
+        </section>
+        
+        
+        <!---------------- 6 Box Advertisement  ------------------->
+        
+        <div class="big-add" >
+            <div class="big-add-img" >
+                <img src="./assets /s1.png" alt="1" style="width: 500px; padding: 10px;">
+            </div>
+            <div class="big-add-img" >
+                <img src="./assets /s2.png" alt="1" style="width: 500px; padding: 10px;">
+            </div>
+            <div class="big-add-img" >
+                <img src="./assets /s3.png" alt="1" style="width: 500px; padding: 10px;">
+            </div>
+            
+            <div class="big-add-img" >
+                <img src="./assets /s4.png" alt="1" style="width: 500px; padding: 10px;">
+            </div>
+            <div class="big-add-img" >
+                <img src="./assets /s5.png" alt="1" style="width: 500px; padding: 10px;">
+            </div>
+            <div class="big-add-img" >
+                <img src="./assets /s6.png" alt="1" style="width: 500px; padding: 10px;">
+            </div>
+        </div>
+
+
+        <!------------------ Top Deals on Fashion and Item Carousel --------------->
+        <br>
+        <section  style="width: 90%; margin:auto;display: flex;justify-content: space-between;flex-wrap: wrap;background-color:white;">   
+            <div class="top-offers">
+                <div class="top-offers-heading">
+                <h3>Top Deals on Fashion</h3>
+                <button class="btn btn-primary" style="font-size:15px">
+                    VIEW ALL
+                </button>
+            </div>
+            
+            <div class="temp">
+                <img src="https://rukminim1.flixcart.com/fk-p-flap/278/278/image/1e483f8045ec13a8.jpg?q=90" alt="">
+            </div>
+        </div>
+        <div class="main-content2">
+               <main>
+                   <div class="dod" style=" background-color: white; ">
+                    <div id="demo3" class="carousel slide" data-bs-ride="carousel">
+               
+                       <!-- The slideshow/carousel -->
+               
+                       <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="items">
+                                <div class="item" id="i1">
+                                    <img class="item-img" src="./assets /watch.jpeg" alt="watch">
+                                    <p class="item-name">Casio,Fastrack,Sonata..</p>
+                                    <p class="item-offer">Upto 80%+Extra 10%Off</p>
+                                    <p class="item-tag">Knockout Deals</p>
+                                </div>
+                                <div class="item" id="i2">
+                                    <img class="item-img" src="./assets /home-temple.jpeg" alt="watch">
+                                    <p class="item-name">Home Temples & more</p>
+                                    <p class="item-offer">Extra 10% Off</p>
+                                    <p class="item-tag">Space saving furniture</p>
+                                </div>
+                                <div class="item" id="i3">
+                                    <img class="item-img" src="./assets /premium-tablet.jpeg" alt="watch">
+                                    <p class="item-name">Premium Tablet </p>
+                                    <p class="item-offer">Extra 10% Off</p>
+                                    <p class="item-tag">For All Top models</p>
+                                </div>
+                                <div class="item" id="i4">
+                                    <img class="item-img" src="./assets /best-home-decor.jpeg" alt="watch">
+                                    <p class="item-name">Best of Home Decor</p>
+                                    <p class="item-offer">From 79</p>
+                                    <p class="item-tag">Lowest Price Ever</p>
+                                </div>
+                                <div class="item" id="i5"   >
+                                    <img class="item-img" src="./assets /metronaut.jpeg" alt="watch">
+                                    <p class="item-name">Metronaut, provogue & ...</p>
+                                    <p class="item-offer">From 249 + Extra 10%Off</p>
+                                    <p class="item-tag">Jackets,Dresses & More</p>
+                                </div>
+                            </div>  
+                        </div>  
+                
+                        <div class="carousel-item">
+                            <div class="items">
+                                <div class="item" id="i1">
+                                    <img class="item-img"  src="./assets /premium-tablet.jpeg" alt="watch">
+                                    <p class="item-name">Premium Tablet </p>
+                                    <p class="item-offer">Extra 10% Off</p>
+                                    <p class="item-tag">For All Top models</p>
+                                </div>
+                                <div class="item" id="i2">
+                                    <img class="item-img" src="./assets /best-home-decor.jpeg" alt="watch">
+                                    <p class="item-name">Best of Home Decor</p>
+                                    <p class="item-offer">From 79</p>
+                                    <p class="item-tag">Lowest Price Ever</p>
+                                </div>
+                                <div class="item" id="i3">
+                                    <img class="item-img" src="./assets /metronaut.jpeg" alt="watch">
+                                    <p class="item-name">Metronaut, provogue & ...</p>
+                                    <p class="item-offer">From 249 + Extra 10%Off</p>
+                                <p class="item-tag">Jackets,Dresses & More</p>
+                            </div>
+                            <div class="item" id="i4">
+                                <img class="item-img" src="./assets /lava.jpeg" alt="watch">
+                                <p class="item-name">LAVA A1500</p>
+                                <p class="item-offer">Flat 830 off</p>
+                                <p class="item-tag">Now 999</p>
+                            </div>
+                            <div class="item" id="i5">
+                                <img class="item-img" src="./assets /lava.jpeg" alt="watch">
+                                <p class="item-name">LAVA A1500</p>
+                                <p class="item-offer">Flat 830 off</p>
+                                <p class="item-tag">Now 999</p>
+                            </div>
+                        </div>
+                        </div>
+                        
+                    </div>
+                       <!-- Left and right controls/icons -->
+               
+                       <button class="carousel-control-prev" type="button" data-bs-target="#demo3" data-bs-slide="prev">
+                       <span class="carousel-control-prev-icon" style="background-color:gray"></span>
+                       </button>
+               
+                       <button class="carousel-control-next" type="button" data-bs-target="#demo3" data-bs-slide="next">
+                       <span class="carousel-control-next-icon" style="background-color:gray"></span>
+                       </button>
+                   </div> 
+                   </div>
+               </main>
+           </div>
+        </section>
+        <br>
+
+    </div>
+</body>
+</html>
