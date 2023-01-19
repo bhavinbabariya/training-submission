@@ -1,0 +1,443 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+body{
+    font-family: Roboto,Arial,sans-serif;
+}
+
+#mysidebar{
+    width:50%; 
+    display: none;
+    z-index: 2;
+}
+
+#_close{
+    float: right;
+}
+
+#logo img:first-child{ 
+    width: 82px;
+}
+
+#plus-logo{
+    width:11px;
+}
+
+#plus-text{
+    color:yellow;
+}
+
+#whole_search{
+    display: flex;
+    align-items: center;
+    width:35%;
+}
+
+#whole_login{
+    margin-left: 15px;
+}
+
+#cart-svg{
+    width:25px;
+}
+
+
+header{
+    position: sticky;
+}
+
+nav{
+    background-color: #2874f0;
+    overflow: auto;
+}
+
+.nav-main{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-item{
+    padding : 10px 10px;
+}
+
+#explore{
+    color:white;
+    font-size: 13px;
+    font-style: italic;
+}
+#search{
+    font-size: 14px;
+    height: 36px;
+    width: 500px;
+    padding: 0px 14px;
+
+}
+
+input:focus,input:hover {
+    outline : none;
+}
+
+#login{
+    background-color: rgb(255,255,255);
+    color : rgb(40,116,240);
+    cursor : pointer;
+    text-decoration: none;
+    font-weight: 550;
+    font-size: 17px;
+    padding: 6px 40px;
+}
+
+.more,.cart{
+    color : white;
+    font-weight: bold;
+    padding : 0 10px;
+}
+
+#down-arrow{
+    width: 10px;
+}
+
+.more:hover > #down-arrow{
+    -webkit-transform:rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+}   
+
+#dropdownmore {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 2;
+    color: black;
+}
+
+.fa{
+    color : rgb(40,116,240);
+    padding: 6px;
+    width:30px;
+    
+}
+
+#dropdownmore > p{
+    margin: 0px;
+    padding: 6px;
+    border-bottom: 1px solid rgb(221, 220, 220);
+}
+
+.more:hover #dropdownmore{
+    display: block;
+}
+
+#search-icon{
+    position: relative;
+    right: 30px;
+    z-index : 1;
+}
+
+
+/* ------------Second Header CSS----------------- */
+
+#mobile-header{
+    display: none;
+}
+
+.nav-main2{
+   
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-item2{
+    padding : 10px 10px;
+}
+
+.left1{
+    float:left;
+    margin-left: 20px;
+}
+
+.left2{
+    float:left;
+    margin-left: 40px;
+}
+
+.login2{
+    color:white;
+    margin-right:20px;
+    float:right;
+    text-decoration: none;
+}
+
+.cart2{
+    float:right;
+    display:inline-block;
+    margin: 0px 5px;
+}
+
+.search2{
+    display: flex;
+    align-items: center;
+    width:100%;
+    justify-content: center;
+}
+
+/* -----------Three Line CSS----------- */
+
+
+.three-line {
+    width: 27px;
+    height: 2px;
+    background-color: white;
+    margin: 6px 0;
+  }
+
+
+/* ------------------------------------ */
+
+
+/* ---------------CSS of categories----------------------- */
+
+.categories{
+    display: flex;
+    justify-content: center; 
+    flex-wrap: wrap; 
+    border-bottom: 1px solid rgb(221, 220, 220);
+}
+
+.category{
+    padding: 10px;
+    margin: 0px;
+    font-weight: bold;
+    color:rgb(0, 0, 0);
+    font-size: 15px;
+}
+
+.category:hover{
+    color : blue;
+}
+
+.category > img{
+    width: 80px;
+}
+
+.category-name{
+    text-align: center;
+}
+
+.first-ad{
+    width: 90%;
+    margin:auto; 
+}
+.one-ad{
+    width: 90%;
+    margin:auto;
+    display: flex;
+    justify-content: center;
+    background-color:white;
+    padding: 20px;
+}
+
+.one-ad-inside{
+    width:auto;
+    padding:20px;
+}
+
+.one-ad-inside img{
+    max-width:100%;
+    height:auto;
+}
+/* -----------------Deals of the Day---------------------- */
+
+.main-div{
+    background-color: #f0f0f0;
+}
+
+.dod{
+    width: 90%;
+    margin: auto;
+    background-color: white; 
+}
+
+.items{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.item {
+    padding:15px;
+    font-size: 15px;
+    text-align: center;
+}
+.item > img {
+    width:150px;
+    height: 180px;
+    padding: 10px;
+}
+
+.item-name{
+    font-weight: bold;
+    margin-top: 30px;
+    margin-bottom: 5px;
+}
+.item-offer{
+    margin: 5px;
+    color : green;
+}
+.item-tag{
+    color : gray;
+}
+
+.item-img:hover{
+       transform:scale(1.1);
+    }
+
+.cbtn{
+    background-color:gray;
+}
+
+#boAt-add{
+    width: 100%;
+}
+
+.ad-poster{
+    width: 500px;
+    padding: 10px;
+}
+.add > #img1{
+    margin:auto;
+}
+
+section{
+    text-align: center;
+}
+
+.top-offer-section{
+    width: 90%;
+    margin:auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color:white; 
+}
+
+.top-deal-section{
+    width: 90%;
+    margin:auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color:white;
+}
+
+.bttn{
+    font-size:15px;
+}
+
+.top-offers{
+    width: 15%;
+}
+
+.top-offers-heading{
+    padding: 75px 0px;
+}
+
+.top-add{
+   width: 15%;
+}
+.main-content{
+    width:70%;
+}
+.main-content2{
+    width:85%
+}
+
+
+.temp > img{
+    width: 100%;
+}
+
+.big-add{
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 90%;
+    margin:auto;
+}
+
+
+/* ------------Media Query----------- */
+
+
+@media screen and (max-width: 767px) {
+    section{
+      flex-direction: column;
+    }
+  
+    .top-offers{
+      width: 100%;
+      padding: 0px 20px;
+    }
+  
+    .main-content{
+      width: 100%;
+    }
+    .main-content2{
+        width:100%
+    }
+    .top-add{
+      width: 100%;
+      padding: 10px 225px;
+    }
+
+    .top-offers > .temp{
+        display: none;
+    }
+    
+    .top-offers-heading{
+        padding: 30px 0px;;
+    }
+
+    #mobile-header{
+        display: block;
+    }
+    #desktop-nav{
+        display: none;
+    }
+  }
+
+  @media screen and (max-width: 1703px) {
+    #i5{
+        display: none;
+    }
+  }
+
+  @media screen and (max-width: 1333px) {
+    #i4{
+        display: none;
+    }
+  }
+
+  @media screen and (max-width: 1020px) {
+    #i3{
+        display: none;
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    #i2{
+        display: none;
+    }
+  }
