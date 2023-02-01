@@ -13,13 +13,16 @@ body{
     width: 380px;
     margin:auto;    
     border: 2px solid  rgb(197, 194, 194);
-    background-color: #f0f0f0
+    background-color: #f0f0f0;
+    gap:2px;
+    padding: 2px;
 }
 
 .grid-item{
     border:0.1em solid rgb(197, 194, 194);
     text-align: center;
     padding: 10px;
+    border-radius: 5px;
 }
 
 .input-element{
@@ -35,6 +38,7 @@ body{
 .trigonometry{
     grid-column-start: 1;
     grid-column-end: 3;
+    position: relative;
 }
 
 .function{
@@ -70,12 +74,32 @@ input{
 }
 
 .grid-item:hover{
-    border:1px solid black;
+    border:1px solid rgb(201, 184, 184);
     cursor: pointer;
 }
 
 .output{
-    background-color: azure;
+    background-color: rgb(255, 255, 255);
     font-weight: bold;
     font-size: 18px;
+}
+
+.sub-grid-container{
+    /* display: grid; */
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(2,1fr);  
+    border: 1px solid  rgb(197, 194, 194);
+    background-color:white;
+    position: absolute;
+    top : 40px;
+    left: 0px;
+    width: 150%;
+    display: none;
+}
+
+
+.sub-grid-item{
+    border:0.1em solid rgb(197, 194, 194);
+    text-align: center;
+    padding: 10px 10px;
 }
