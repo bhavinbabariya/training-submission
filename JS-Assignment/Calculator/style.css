@@ -37,13 +37,14 @@ body{
 
 .trigonometry{
     grid-column-start: 1;
-    grid-column-end: 3;
+    grid-column-end: 4;
     position: relative;
 }
 
 .function{
-    grid-column-start: 3;
-    grid-column-end: 5;
+    grid-column-start: 4;
+    grid-column-end: 6;
+    position: relative;
 }
 
 .number{
@@ -53,7 +54,7 @@ body{
 }
 
 .equal{
-    background-color: #88c0da;
+    background-color: beige;
 }
 
 .input-element{
@@ -85,16 +86,14 @@ input{
 }
 
 .sub-grid-container{
-    /* display: grid; */
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(3,1fr);
     grid-template-rows: repeat(2,1fr);  
     border: 1px solid  rgb(197, 194, 194);
     background-color:white;
     position: absolute;
     top : 40px;
     left: 0px;
-    width: 150%;
-    display: none;
+    width: 100%;
 }
 
 
@@ -102,4 +101,39 @@ input{
     border:0.1em solid rgb(197, 194, 194);
     text-align: center;
     padding: 10px 10px;
+}
+
+.sub-grid-container-2{
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(1,1fr);  
+    border: 1px solid  rgb(197, 194, 194);
+    background-color:white;
+    position: absolute;
+    top : 40px;
+    left: 0px;
+    width: 100%; 
+    overflow: hidden;
+}
+
+
+.sub-grid-item-2{
+    border:0.1em solid rgb(197, 194, 194);
+    text-align: center;
+    padding: 13px;
+}
+
+.sub-grid-item-2:hover{
+    background-color: #f0f0f0
+}
+#clear{
+    font-weight: bold;
+    background-color: beige;
+}
+
+.display-yes{
+    display: grid;
+}
+
+.display-no{
+    display: none;
 }

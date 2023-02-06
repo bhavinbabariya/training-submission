@@ -20,7 +20,7 @@
       <div class="grid-item input-element">
         <input type="text" name="user-input" id="user-input" />
       </div>
-      <div class="grid-item deg">DEG</div>
+      <div class="grid-item deg" id="deg">DEG</div>
       <div class="grid-item f-e">F-E</div>
       <div class="grid-item output" id="output"></div>
       <div class="grid-item" id="mc">MC</div>
@@ -41,18 +41,16 @@
           ></path>
         </svg>
         &nbsp; Trigonometry
-        <div class="sub-grid-container" id="trigonometry-section">
-          <div class="sub-grid-item">2 <sup>nd</sup></div>
+        <div class="sub-grid-container display-no" id="trigonometry-section">
           <div class="sub-grid-item" id="sin">sin</div>
           <div class="sub-grid-item" id="cos">cos</div>
           <div class="sub-grid-item" id="tan">tan</div>
-          <div class="sub-grid-item" id="hyp">hyp</div>
           <div class="sub-grid-item" id="sec">sec</div>
           <div class="sub-grid-item" id="cosec">csc</div>
           <div class="sub-grid-item" id="cot">cot</div>
         </div>
       </div>
-      <div class="grid-item function">
+      <div class="grid-item function " id="function">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           x="0px"
@@ -65,39 +63,34 @@
           ></path>
         </svg>
         Function
-        <!-- <div class="sub-grid-container-2" id="function-section">
-            <div class="sub-grid-item-2">2 <sup>nd</sup></div>
-            <div class="sub-grid-item-2" id="sin">sin</div>
-            <div class="sub-grid-item-2" id="cos">cos</div>
-            <div class="sub-grid-item-2" id="tan">tan</div>
-            <div class="sub-grid-item-2" id="hyp">hyp</div>
-            <div class="sub-grid-item-2" id="sec">sec</div>
-            <div class="sub-grid-item-2" id="cosec">csc</div>
-            <div class="sub-grid-item-2" id="cot">cot</div>
-          </div> -->
+        <div class="sub-grid-container-2 display-no" id="function-section">
+            <div class="sub-grid-item-2" id="Ceil">⌈x⌉</div>
+            <div class="sub-grid-item-2" id="Floor">⌊x⌋</div>
+            <div class="sub-grid-item-2" id='Rand'>rand</div>
+          </div>
       </div>
-      <div class="grid-item"></div>
-      <div class="grid-item">2<sup>nd</sup></div>
+      <!-- <div class="grid-item"></div> -->
+      <div class="grid-item" id="x3">x<sup>3</sup></div>
       <div class="grid-item pie">&pi;</div>
       <div class="grid-item pie">e</div>
       <div class="grid-item" id="clear">C</div>
       <div class="grid-item" id="delete">&larr;</div>
-      <div class="grid-item">x<sup>2</sup></div>
-      <div class="grid-item">1 <sub>/ X</sub></div>
-      <div class="grid-item">| x |</div>
-      <div class="grid-item">exp</div>
-      <div class="grid-item">mod</div>
-      <div class="grid-item">2 &radic; x</div>
+      <div class="grid-item" id="x2">x<sup>2</sup></div>
+      <div class="grid-item" id="OnebyX">1 <sub>/ X</sub></div>
+      <div class="grid-item" id="Abs">| x |</div>
+      <div class="grid-item" id="exp">exp</div>
+      <div class="grid-item" id="mod">mod</div>
+      <div class="grid-item" id="sroot">2 &radic; x</div>
       <div class="grid-item key">(</div>
       <div class="grid-item key">)</div>
       <div class="grid-item" id="facto">n!</div>
       <div class="grid-item key">&divide;</div>
-      <div class="grid-item">x<sup>y</sup></div>
+      <div class="grid-item" id="xy">x<sup>y</sup></div>
       <div class="grid-item number key">7</div>
       <div class="grid-item number key">8</div>
       <div class="grid-item number key">9</div>
       <div class="grid-item key">&times;</div>
-      <div class="grid-item">10<sup>x</sup></div>
+      <div class="grid-item" id="10x">10<sup>x</sup></div>
       <div class="grid-item number key">4</div>
       <div class="grid-item number key">5</div>
       <div class="grid-item number key">6</div>
@@ -108,7 +101,7 @@
       <div class="grid-item number key">3</div>
       <div class="grid-item key">+</div>
       <div class="grid-item" id="ln">ln</div>
-      <div class="grid-item number">+ <sub>/ -</sub></div>
+      <div class="grid-item number" id="plusMinus">+ <sub>/ -</sub></div>
       <div class="grid-item number key">0</div>
       <div class="grid-item number key">.</div>
       <div class="grid-item equal" id="equal">=</div>
