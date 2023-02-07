@@ -1,0 +1,167 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+#logo{
+    /* width: 50px; */
+}
+
+header{
+    /* border:2px solid red; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-around;
+    background-color:#131210;
+    color: white;
+}
+
+.left{
+    display: flex;
+    /* border:1px solid black; */
+    align-items: center;
+    padding:10px 50px;
+}
+
+.left img{
+    cursor: pointer;
+}
+    
+.right{
+    /* border:1px solid black; */
+}
+
+#slider{
+    margin: 0;
+    padding: 0;
+    background-image: url('./assets/index-00.jpg');
+    background-size: 100% ;
+    background-repeat: no-repeat;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+#banner{
+    color:rgb(255, 255, 255);
+    text-align: center;
+}
+
+.banner-top{
+    font-size: 20px;
+}
+
+.banner-bottom{
+    font-size: 50px;
+}
+.right ul li {
+    display: inline-block;
+    padding: 30px 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.container {
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    font-weight: bold;
+    font-size: 2rem;
+    position: relative;
+}
+
+.container::before {
+    content: '';
+    /* background: url('./assets/index-00.jpg') 
+    no-repeat center center/cover; */
+    background: url('./assets/index-00.jpg') 
+    no-repeat center ;
+    overflow-y: hidden;
+    position: absolute;
+    opacity: 0.9;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 50vh;
+    z-index: -1;
+}
+
+#heading{
+    text-align: center;
+    padding: 50px 50px;
+}
+
+.programs,.au-main{
+    width: 80%;
+    /* border:1px solid black; */
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    position: relative;
+}
+
+.program{
+    width: 15%;
+    display: inline-block;
+    text-align: center;
+    padding: 50px;
+    height: 500px;
+    color:white
+}
+
+.program h2{
+    padding: 20px;
+}
+
+.p1{
+    background: url('./assets/boxing.jpg') no-repeat center ;;
+    background-size: cover;
+}
+
+.p2{
+    background: url('./assets/bb.jpg') no-repeat center ;;
+    background-size: cover;
+}
+
+.p3{
+    background: url('./assets/bb.jpg') no-repeat center ;;
+    background-size: cover;
+}
+
+.p4{
+    background: url('./assets/boxing.jpg') no-repeat center ;;
+    background-size: cover;
+}
+
+.btn{
+    margin-top: 100px;
+    padding: 10px;
+    background:none;
+    color:wheat;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+a{
+    color:white;
+    text-decoration: none;
+}
+
+.au-sub{
+    border:1px solid black;
+    height:300px;
+    width: 25%;
+}
+
+.about-us{
+    border: 1px solid black;
+    width: 80%;
+    margin:auto;
+}
