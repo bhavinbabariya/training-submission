@@ -213,11 +213,13 @@ class Calculator {
     {
         let n = this.stack.pop();
         this.input.value = n;
+        console.log(this.stack)
     }
 
     memoryClear()
     {
         this.stack.length = 0;
+        console.log(this.stack)
     }
 
     memoryPlus()
