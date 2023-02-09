@@ -6,20 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CRUD Application</title> 
     <link rel="stylesheet" href="style.css">
-    <script src="./index.js" defer></script>
+    <script src="./edit.js" defer></script>
 </head>
 <body>
     <header>
         <div class="left">
             CRUD Application
         </div>
-        <!-- <div class="right">
-            <button class="btn_">Add Product </button>
-        </div> -->
     </header>
     <div class="form_container">
-        <h2 class="form-h">Add product</h2>
+        <h2 class="form-h">Update product</h2>
         <div id="add_p_form">
+            <div class="input-together">
+                <div class="input-name">ID :</div>
+                <div class="input-section">
+                    <input type="text" name="p_id" id="p_id" required disabled>
+                    <div class="validation" id="err_name"></div>
+                </div>
+            </div>
             <div class="input-together">
                 <div class="input-name">Product Name :</div>
                 <div class="input-section">
@@ -51,26 +55,10 @@
             <div class="input-together">
                 <div class="input-name"></div>
                 <div class="input-section">
-                    <button class="btn_" id="add_p">Add Product </button>
+                    <button class="btn_" id="add_p">Update Product </button>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="data_container">
-
-        <h1 class="data-h">Products</h1>
-        <table id="data-table">
-            <tr>
-                <th>ID</th>
-                <th>Product Name</th>
-                <th>Price</th>
-                <th>Description</th>
-                <th>Edit</th>
-                <th>Delete</th>
-                <th>View</th>
-            </tr>
-            
-        </table>
     </div>
     <br>
     <br>

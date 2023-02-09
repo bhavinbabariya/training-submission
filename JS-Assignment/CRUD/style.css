@@ -22,17 +22,7 @@ header {
   float: right;
 }
 
-.btn_ {
-  padding: 10px 20px;
-  background-color: rgb(158, 224, 255);
-  outline: none;
-  border: none;
-  border-radius: 5px;
-  font-size: 15px;
-  cursor: pointer;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);;
 
-}
 
 /* .overlay {
     position: absolute;
@@ -86,10 +76,38 @@ header {
     width: 90%;
 
 }
+.btn_ {
+    padding: 10px 20px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    cursor: pointer;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);;
+  
+  }
+  .btn-view{
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;  
 
+  }
+
+  .btn-edit{
+    background-color: #17a2b8;
+    color: white;
+    font-weight: bold;
+  }
+
+  .btn-delete{
+    background-color: #dc3545;
+    color: white;
+    font-weight: bold;
+  }
 .form_container {
     width: 70%;
-    max-width: 700px;
+    max-width: 800px;
     margin: auto;
     padding: 20px;
     margin-top: 50px;
@@ -97,12 +115,17 @@ header {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);;
 }
 
+.form-h{
+    padding: 25px 0px;
+    text-align: center;
+}
+
 .data_container{
-    width: 90%;
-    max-width: 750px;
+    width: 100%;
+    max-width: 1200px;
     margin: auto;
     margin-top: 100px   ;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    overflow: auto;
     /* padding: 25px; */
 
 }
@@ -113,4 +136,23 @@ table,tr,th,td{
 
 table{
     width: 100%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+.validation
+{
+    /* border:1px solid black; */
+    display: inline-block;
+    color:red;
+    margin-top: 10px;
+}
+
+td,th{
+    padding:8px;
+}
+
+.data-h{
+    text-align: center;
+    padding: 25px;
 }
