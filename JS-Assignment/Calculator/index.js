@@ -32,7 +32,6 @@ class Calculator {
 
             // 10^x Logic
 
-            
             const tenxReg = /\d+\^\d+/g;
 
             newstr = newstr.replace(tenxReg,(x)=>{
@@ -89,14 +88,11 @@ class Calculator {
     }
 
     clear(){
-    
         this.input.value = '';
         this.output.innerText = ''
     }
 
     appendNumbers(ch){
-
-
         if(ch === '×')
             ch = '*';
         else if(ch === '÷')
@@ -205,7 +201,6 @@ class Calculator {
     {
         let n = parseInt(this.output.innerText);
         this.stack.push(n);
-        console.log(this.stack)
 
     }
 
@@ -213,20 +208,17 @@ class Calculator {
     {
         let n = this.stack.pop();
         this.input.value = n;
-        console.log(this.stack)
     }
 
     memoryClear()
     {
         this.stack.length = 0;
-        console.log(this.stack)
     }
 
     memoryPlus()
     {
         let n = parseInt(this.output.innerText);
         this.stack[this.stack.length-1] = this.stack[this.stack.length-1] + n;
-        console.log(this.stack)
         
     }
 
@@ -234,7 +226,6 @@ class Calculator {
     {
         let n = parseInt(this.output.innerText);
         this.stack[this.stack.length-1] = this.stack[this.stack.length-1] - n;
-        console.log(this.stack)
     }
 
     // 10X
@@ -296,7 +287,6 @@ class Calculator {
     // ABS
     computeAbs()
     {
-        console.log('abs')
         this.output.innerText = Math.abs(Number(eval(this.input.value)) || 0);
         this.input.value = 'abs('+`${this.input.value || 0}`+')';
     }
@@ -310,7 +300,6 @@ class Calculator {
 }
 
 // class end ---------
-
 
 const input = document.getElementById('user-input')
 const output = document.getElementById('output');
@@ -357,7 +346,6 @@ deleteButton.addEventListener('click',()=>{
     calc.calculate();
 })
 
-
 // All Trigonometry Function --------------->
 
 sin.addEventListener('click',()=>{
@@ -383,7 +371,6 @@ cosec.addEventListener('click',()=>{
 sec.addEventListener('click',()=>{
     calc.computeSec();
 })
-
 
 // Ceil, Floor and Random Function
 const Ceil = document.getElementById('Ceil');
@@ -436,7 +423,6 @@ function closeTrigonometry()
 
     }
 }
-
 
 // Function DropDown Menu
 
@@ -491,7 +477,6 @@ pie.forEach((ele)=>{
         calc.appendNumbers(e.target.innerText)
     })    
 })
-
 
 // Memory Store, Restore, Clear, M+, M-
 

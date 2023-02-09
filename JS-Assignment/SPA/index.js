@@ -11,18 +11,18 @@ const opBtn = document.getElementById("op-btn");
 const header = document.querySelector("header");
 homeBtn.addEventListener("click", (e) => {
     e.preventDefault();
-    //  home.scrollIntoView({
-    //      behavior: "smooth",
-    //      block: "start",
-    //      inline: "nearest",
-    //  });    
-    console.log('home')
+    // Another Method for scrolling
+
+    /*  home.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+          inline: "nearest",
+      });    */
     window.scrollTo(0,0)
 });
 
 auBtn.addEventListener("click", (e) => {
     e.preventDefault();
-    console.log('about')
     const aboutCoords = about.getBoundingClientRect(); 
     window.scrollTo(aboutCoords.left+window.pageXOffset,aboutCoords.top+window.pageYOffset-100);
     
@@ -30,7 +30,6 @@ auBtn.addEventListener("click", (e) => {
 
 cuBtn.addEventListener("click", (e) => {
     e.preventDefault();
-    console.log('contact')
     const contactCoords = contact.getBoundingClientRect(); 
     window.scrollTo(contactCoords.left+window.pageXOffset,contactCoords.top+window.pageYOffset);
  
@@ -38,7 +37,6 @@ cuBtn.addEventListener("click", (e) => {
 
 opBtn.addEventListener("click", (e) => {
     e.preventDefault();
-    console.log('our programs')
     const programsCoords = programs.getBoundingClientRect(); 
     window.scrollTo(programsCoords.left+window.pageXOffset,programsCoords.top+window.pageYOffset-50);
 });

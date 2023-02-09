@@ -3,9 +3,6 @@
     padding: 0;
 }
 
-body{
-   
-}
 .grid-container{
     display: grid;
     grid-template-columns: repeat(5,1fr);
@@ -70,8 +67,6 @@ input{
     border : none;
     text-align: center;
     font-size: 20px;
-    /* padding: 20px */
-
 }
 
 .grid-item:hover{
@@ -96,7 +91,6 @@ input{
     width: 100%;
 }
 
-
 .sub-grid-item{
     border:0.1em solid rgb(197, 194, 194);
     text-align: center;
@@ -115,7 +109,6 @@ input{
     overflow: hidden;
 }
 
-
 .sub-grid-item-2{
     border:0.1em solid rgb(197, 194, 194);
     text-align: center;
@@ -125,6 +118,7 @@ input{
 .sub-grid-item-2:hover{
     background-color: #f0f0f0
 }
+
 #clear{
     font-weight: bold;
     background-color: beige;

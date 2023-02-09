@@ -16,33 +16,88 @@
         <div class="right">
             <button class="btn_">Add Product </button>
         </div>
-        <div class="modal">
-            <div class="input-together">
-                <div class="input-header">Product Name</div>
-                <div class="input-section">
-                    <input type="text">
-                </div>
-            </div>
-            <div class="input-together">
-                <div class="input-header">Price</div>
-                <div class="input-section">
-                    <input type="text">
-                </div>
-            </div>
-            <div class="input-together">
-                <div class="input-header">Name</div>
-                <div class="input-section">
-                    <input type="text">
-                </div>
-            </div>
-            <div class="input-together">
-                <div class="input-header">Name</div>
-                <div class="input-section">
-                    <input type="text">
-                </div>
-            </div>
-        </div>
-        <div class="overlay"></div>
     </header>
+    <div class="form_container">
+        <form id="add_p_form">
+            <div class="input-together">
+                <div class="input-name">Product Name :</div>
+                <div class="input-section">
+                    <input type="text" name="p_name" id="p_name">
+                </div>
+            </div>
+            <div class="input-together">
+                <div class="input-name">Price :</div>
+                <div class="input-section">
+                    <input type="number" name="p_price" id="p_price">
+                </div>
+            </div>
+            <div class="input-together">
+                <div class="input-name">Description :</div>
+                <div class="input-section">
+                    <textarea name="p_desc" id="p_desc" placeholder="Type Product Description Here..."></textarea>
+                </div>
+            </div>
+            <div class="input-together">
+                <div class="input-name">Image :</div>
+                <div class="input-section">
+                    <input type="file" name="p_img" id="p_img">
+                </div>
+            </div>
+            <div class="input-together">
+                <div class="input-name"></div>
+                <div class="input-section">
+                    <button class="btn_" id="add_p">Add Product </button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="data_container">
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Product Name</th>
+                <th>Price</th>
+                <th>Description</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+            <tr>
+                <td>jhfherfjerf</td>
+                <td>Kurta</td>
+                <td>500</td>
+                <td>Navratri Special</td>
+                <td>Edit</td>
+                <td>Delete</td>
+            </tr>
+        </table>
+    </div>
+    <div class="overlay"></div>
 </body>
 </html>
+
+    <!-- <div class="modal">
+        <div class="input-together">
+            <div class="input-name">Product Name</div>
+            <div class="input-section">
+                <input type="text">
+            </div>
+        </div>
+        <div class="input-together">
+            <div class="input-name">Price</div>
+            <div class="input-section">
+                <input type="text">
+            </div>
+        </div>
+        <div class="input-together">
+            <div class="input-name">Name</div>
+            <div class="input-section">
+                <input type="text">
+            </div>
+        </div>
+        <div class="input-together">
+            <div class="input-name">Name</div>
+            <div class="input-section">
+                <input type="text">
+            </div>
+        </div>
+    </div> -->
