@@ -50,7 +50,7 @@ const addData = () => {
     products.push(product);
     localStorage.setItem("products", JSON.stringify(products));
 
-    window.alert("Data Added Succesfully");
+    showAlert("Product added succesfully !!");
 };
 
 // below function validates the form
@@ -97,21 +97,6 @@ const data_table = document.getElementById("data-table");
 const not_found = document.querySelector(".not-found");
 
 const clearTableData = () => {
-    // data_table.replaceChildren();
-    // data_table.insertAdjacentHTML(
-    //     "afterbegin",
-    //     `<tr>
-    //     <th>ID</th>
-    //     <th>Product Name</th>
-    //     <th>Price</th>
-    //     <th>Description</th>
-    //     <th>Image</th>
-    //     <th>Edit</th>
-    //     <th>Delete</th>
-    //     <th>View</th>
-    // </tr>`
-    // );
-
     // Remove Element except first 2
     // 1.Text
     // 2.tr th
@@ -129,16 +114,19 @@ const handleEdit = (id) => {
     window.location.replace("/edit.html");
 };
 
-const handleView = (id) => {
+// Handle View Button
+function handleView(id) {
     localStorage.setItem("view_product_id", id);
     window.location.replace("/view.html");
-};
+}
 
+// Handle Cancle Button in modal
 const handleCancle = () => {
     modal.classList.add("hidden");
     overlay.classList.add("hidden");
 };
 
+// ACTUAL DELETE FUNCTION : DELETE PRODUCT DATA IN LOCALSTORAGE
 const deleteProduct = () => {
     const id = localStorage.getItem("delete_product_id");
     const products = JSON.parse(localStorage.getItem("products"));
@@ -148,11 +136,14 @@ const deleteProduct = () => {
     localStorage.setItem("products", JSON.stringify(products));
     handleCancle();
     showData();
+    showAlert("Product deleted successfully!!");
 };
 
+// Handle Delete Button
 const handleDelete = (id) => {
     localStorage.setItem("delete_product_id", id);
 
+    //show modal and go to Top
     modal.classList.remove("hidden");
     overlay.classList.remove("hidden");
     window.scrollTo({ behavior: "smooth", top: 0 });
@@ -177,14 +168,15 @@ const putDataToTable = (products) => {
             <td>${p.name}</td>
             <td>${p.price}</td>
             <td>${p.desc}</td>
-            <td><img src="./images/${p.img_name}" alt="" width=100 height=100></td>
-            <td><button class="btn_ btn-edit" onClick='handleEdit(${p.id})'>Edit</button></td>
-            <td><button class="btn_ btn-delete" onClick='handleDelete(${p.id})'>Delete</button></td>
-            <td><button class="btn_ btn-view"onClick='handleView(${p.id})'>View</button></td>
+            <td><img src="${p.img_name}" alt="" width=100 height=100></td>
+            <td><button class="btn_ btn-edit" onClick='handleEdit(${p.id})'><i class="material-icons">edit</i></button>
+            <button class="btn_ btn-delete" onClick='handleDelete(${p.id})'><i class="material-icons">delete</i></button>
+            <button class="btn_ btn-view"onClick='handleView(${p.id})'><i class="material-icons">visibility</i></button></td>
         </tr>`
         );
     });
 };
+
 // Load data and put it to table
 const showData = () => {
     const products = JSON.parse(localStorage.getItem("products"));
@@ -193,15 +185,124 @@ const showData = () => {
 
 window.onload = showData;
 
-const handleFilter = (e) => {
-    // console.log(e.value);
-    const products = JSON.parse(localStorage.getItem("products"));
+// Debounce Function
+const convertToDebounce = function (fn, delay = 500) {
+    let timer;
+    return function () {
+        clearTimeout(timer);
+        timer = setTimeout(() => {
+            fn.apply(null, arguments);
+        }, delay);
+    };
+};
 
+// FILTER FUNCTION
+const filterData = (e) => {
+    const products = JSON.parse(localStorage.getItem("products"));
     const result = products.filter((p) => p.id.startsWith(e.value));
     putDataToTable(result);
 };
 
-const sortData = (sortBy, mode = 0) => {
+// Handle Filter
+const handleFilter = convertToDebounce(filterData, 400);
+
+const arrowBtnGroup = {
+    id_up: document.querySelector(".id0"),
+    id_down: document.querySelector(".id1"),
+
+    name_up: document.querySelector(".name0"),
+    name_down: document.querySelector(".name1"),
+
+    price_up: document.querySelector(".price0"),
+    price_down: document.querySelector(".price1"),
+};
+
+/* -----------Sorting Logic -------------*/
+
+// 0 -> up & inactive
+// 1 -> up & active
+// 2 -> down & active
+
+const sortBtnState = {
+    id: 0,
+    name: 0,
+    price: 0,
+};
+
+/* Below function change element styling according to state*/
+
+const runForAll = () => {
+    if (sortBtnState["id"] === 0) {
+        arrowBtnGroup.id_up.style.display = "inline-block";
+        arrowBtnGroup.id_down.style.display = "none";
+        arrowBtnGroup.id_up.classList.remove("arrow-btn-active");
+    } else {
+        arrowBtnGroup.id_up.style.display =
+            sortBtnState["id"] === 1 ? "inline-block" : "none";
+        arrowBtnGroup.id_down.style.display =
+            sortBtnState["id"] === 1 ? "none" : "inline-block";
+
+        if (sortBtnState["id"] === 1) {
+            arrowBtnGroup.id_up.classList.add("arrow-btn-active");
+            arrowBtnGroup.id_down.classList.remove("arrow-btn-active");
+        } else {
+            arrowBtnGroup.id_down.classList.add("arrow-btn-active");
+            arrowBtnGroup.id_up.classList.remove("arrow-btn-active");
+        }
+    }
+
+    if (sortBtnState["name"] === 0) {
+        arrowBtnGroup.name_up.style.display = "inline-block";
+        arrowBtnGroup.name_down.style.display = "none";
+        arrowBtnGroup.name_up.classList.remove("arrow-btn-active");
+    } else {
+        arrowBtnGroup.name_up.style.display =
+            sortBtnState["name"] === 1 ? "inline-block" : "none";
+        arrowBtnGroup.name_down.style.display =
+            sortBtnState["name"] === 1 ? "none" : "inline-block";
+
+        if (sortBtnState["name"] === 1) {
+            arrowBtnGroup.name_up.classList.add("arrow-btn-active");
+            arrowBtnGroup.name_down.classList.remove("arrow-btn-active");
+        } else {
+            arrowBtnGroup.name_down.classList.add("arrow-btn-active");
+            arrowBtnGroup.name_up.classList.remove("arrow-btn-active");
+        }
+    }
+    if (sortBtnState["price"] === 0) {
+        arrowBtnGroup.price_up.style.display = "inline-block";
+        arrowBtnGroup.price_down.style.display = "none";
+        arrowBtnGroup.price_up.classList.remove("arrow-btn-active");
+    } else {
+        arrowBtnGroup.price_up.style.display =
+            sortBtnState["price"] === 1 ? "inline-block" : "none";
+        arrowBtnGroup.price_down.style.display =
+            sortBtnState["price"] === 1 ? "none" : "inline-block";
+
+        if (sortBtnState["price"] === 1) {
+            arrowBtnGroup.price_up.classList.add("arrow-btn-active");
+            arrowBtnGroup.price_down.classList.remove("arrow-btn-active");
+        } else {
+            arrowBtnGroup.price_down.classList.add("arrow-btn-active");
+            arrowBtnGroup.price_up.classList.remove("arrow-btn-active");
+        }
+    }
+};
+
+runForAll();
+
+// Below function change state of button
+const changeSortState = (key, value) => {
+    for (let key in sortBtnState) sortBtnState[key] = 0;
+
+    sortBtnState[key] = value;
+    runForAll();
+};
+
+// Sort Data
+const sortData = (sortBy) => {
+    let mode = sortBtnState[sortBy] === 1 ? 1 : 0;
+
     const products = JSON.parse(localStorage.getItem("products"));
 
     if (sortBy === "id") {
@@ -210,30 +311,73 @@ const sortData = (sortBy, mode = 0) => {
                 ? Number(a.id) - Number(b.id)
                 : Number(b.id) - Number(a.id);
         });
+
+        if (sortBtnState.id === 0) {
+            changeSortState("id", 1);
+        } else if (sortBtnState.id === 1) {
+            changeSortState("id", 2);
+        } else if (sortBtnState.id === 2) {
+            changeSortState("id", 1);
+        }
     } else if (sortBy === "name") {
         products.sort((a, b) => {
-            return mode === 0 ? a.name < b.name : a.name > b.name;
+            let flag = a.name.localeCompare(b.name);
+            return mode === 0 ? flag : flag * -1;
         });
+
+        if (sortBtnState.name === 0) {
+            changeSortState("name", 1);
+        } else if (sortBtnState.name === 1) {
+            changeSortState("name", 2);
+        } else if (sortBtnState.name === 2) {
+            changeSortState("name", 1);
+        }
     } else if (sortBy === "price") {
         products.sort((a, b) => {
             return mode === 0
                 ? Number(a.price) - Number(b.price)
                 : Number(b.price) - Number(a.price);
         });
+        if (sortBtnState.price === 0) {
+            changeSortState("price", 1);
+        } else if (sortBtnState.price === 1) {
+            changeSortState("price", 2);
+        } else if (sortBtnState.price === 2) {
+            changeSortState("price", 1);
+        }
     }
 
-    // console.log(products);
     putDataToTable(products);
 };
 
-const p = new Person("bhavin");
+/*--------Home made Alert Box-------------*/
 
-function Person(name) {
-    this.name = name;
-}
+const alert = document.querySelector(".alert");
+const progress = document.querySelector(".progress");
 
-class Student {
-    constructor(name) {
-        this.name = name;
+// Progress Bar in Alert Box
+let i = 0;
+const startProgress = () => {
+    if (i === 100) {
+        progress.style.width = "0%";
+        i = 0;
+        return;
     }
-}
+    setTimeout(() => {
+        progress.style.width = `${i * 1}%`;
+        startProgress(i++);
+    }, 20);
+};
+
+const showAlert = (msg) => {
+    alert.style.display = "block";
+    alert.childNodes[1].innerText = msg;
+    startProgress();
+    setTimeout(() => {
+        alert.style.transform = "translateX(200%)";
+        setTimeout(() => {
+            alert.style.display = "none";
+            alert.style.transform = "translateX(0%)";
+        }, 1000);
+    }, 2000);
+};

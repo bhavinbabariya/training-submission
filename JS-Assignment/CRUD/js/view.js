@@ -6,10 +6,12 @@ const ProductData = {
     p_img: document.getElementById("p_img"),
 };
 
+// Back Button
 const goToHome = () => {
     window.location.replace("/");
 };
 
+// Update Button
 const handleEdit = () => {
     localStorage.setItem(
         "update_product_id",
@@ -18,6 +20,7 @@ const handleEdit = () => {
     window.location.replace("/edit.html");
 };
 
+// Get data and show data
 const getandSetProductData = () => {
     const id = localStorage.getItem("view_product_id");
     const products = JSON.parse(localStorage.getItem("products"));
@@ -30,7 +33,7 @@ const getandSetProductData = () => {
     ProductData.p_name.innerHTML = product.name;
     ProductData.p_price.innerHTML = product.price;
     ProductData.p_desc.innerHTML = product.desc;
-    ProductData.p_img.src = "images/" + product.img_name;
+    ProductData.p_img.src = product.img_name;
 };
 
 window.onload = getandSetProductData();

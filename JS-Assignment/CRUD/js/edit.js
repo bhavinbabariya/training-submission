@@ -32,7 +32,7 @@ const updateData = () => {
     products[p_index] = newProduct;
 
     localStorage.setItem("products", JSON.stringify(products));
-    window.alert("Product Updated Succesfully");
+    showAlert("Product Updated Succesfully");
 };
 
 // below function validates the form
@@ -72,7 +72,9 @@ UpdateForm.update_btn.addEventListener("click", () => {
     try {
         if (validateForm()) {
             updateData();
-            window.location.replace("/");
+            setTimeout(() => {
+                window.location.replace("/");
+            }, 2000);
         }
     } catch (err) {
         console.error(err);
@@ -90,6 +92,7 @@ UpdateForm.cancle_btn.addEventListener("click", (e) => {
     }
 });
 
+// Initially call : get data and set to update form
 const getandSetProductData = () => {
     const id = localStorage.getItem("update_product_id");
     const products = JSON.parse(localStorage.getItem("products"));
@@ -105,3 +108,32 @@ const getandSetProductData = () => {
 };
 
 window.onload = getandSetProductData();
+
+const alert = document.querySelector(".alert");
+const progress = document.querySelector(".progress");
+
+let i = 0;
+const startProgress = () => {
+    if (i === 100) {
+        progress.style.width = "0%";
+        i = 0;
+        return;
+    }
+    setTimeout(() => {
+        progress.style.width = `${i * 1}%`;
+        startProgress(i++);
+    }, 20);
+};
+
+const showAlert = (msg) => {
+    alert.style.display = "block";
+    alert.childNodes[1].innerText = msg;
+    startProgress();
+    setTimeout(() => {
+        alert.style.transform = "translateX(200%)";
+        setTimeout(() => {
+            alert.style.display = "none";
+            alert.style.transform = "translateX(0%)";
+        }, 1000);
+    }, 2000);
+};
