@@ -119,6 +119,7 @@ th {
 
 th {
     background-color: rgb(203, 224, 241);
+    cursor: pointer;
 }
 
 .validation {

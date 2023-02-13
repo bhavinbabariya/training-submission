@@ -65,6 +65,10 @@ const validateForm = () => {
     if (ProductForm.p_price.value == "") {
         ProductForm.err_price.innerText = "Please Enter Product Price";
         flag = false;
+    } else if (ProductForm.p_price.value <= 0) {
+        ProductForm.err_price.innerText =
+            "Product Price must be greater than zero";
+        flag = false;
     } else ProductForm.err_price.innerText = "";
 
     if (ProductForm.p_desc.value == "") {
@@ -233,7 +237,7 @@ const sortBtnState = {
 
 const runForAll = () => {
     if (sortBtnState["id"] === 0) {
-        arrowBtnGroup.id_up.style.display = "inline-block";
+        arrowBtnGroup.id_up.style.display = "none";
         arrowBtnGroup.id_down.style.display = "none";
         arrowBtnGroup.id_up.classList.remove("arrow-btn-active");
     } else {
@@ -252,7 +256,7 @@ const runForAll = () => {
     }
 
     if (sortBtnState["name"] === 0) {
-        arrowBtnGroup.name_up.style.display = "inline-block";
+        arrowBtnGroup.name_up.style.display = "none";
         arrowBtnGroup.name_down.style.display = "none";
         arrowBtnGroup.name_up.classList.remove("arrow-btn-active");
     } else {
@@ -270,7 +274,7 @@ const runForAll = () => {
         }
     }
     if (sortBtnState["price"] === 0) {
-        arrowBtnGroup.price_up.style.display = "inline-block";
+        arrowBtnGroup.price_up.style.display = "none";
         arrowBtnGroup.price_down.style.display = "none";
         arrowBtnGroup.price_up.classList.remove("arrow-btn-active");
     } else {
