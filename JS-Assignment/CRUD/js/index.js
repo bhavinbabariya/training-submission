@@ -86,14 +86,10 @@ const validateForm = () => {
 
 // Handle Submit Event
 ProductForm.add_p.addEventListener("click", () => {
-    try {
-        if (validateForm()) {
-            addData();
-            showData();
-            clearFormData();
-        }
-    } catch (err) {
-        console.error(err);
+    if (validateForm()) {
+        addData();
+        showData();
+        clearFormData();
     }
 });
 

@@ -1,82 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>CRUD Application</title>
+        <link rel="stylesheet" href="./css/edit.css" />
+        <link rel="stylesheet" href="./css/alert.css" />
+        <script src="./js/edit.js" defer></script>
+    </head>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CRUD Application</title>
-    <link rel="stylesheet" href="./css/edit.css" />
-    <link rel="stylesheet" href="./css/alert.css" />
-    <script src="./js/edit.js" defer></script>
-</head>
-
-<body>
-    <header>
-        <div class="left">Fruitwala.com</div>
-    </header>
-    <div class="form_container">
-        <h2 class="form-h">Update product</h2>
-        <div id="update_p_form">
-            <div class="input-together">
-                <div class="input-name">ID :</div>
-                <div class="input-section">
-                    <input type="text" name="p_id" id="p_id" required disabled />
-                    <div class="validation" id="err_name"></div>
+    <body>
+        <header>
+            <div class="left">Fruitwala.com</div>
+        </header>
+        <div class="form_container">
+            <h2 class="form-h">Update product</h2>
+            <div id="update_p_form">
+                <div class="input-together">
+                    <div class="input-name">ID :</div>
+                    <div class="input-section">
+                        <input
+                            type="text"
+                            name="p_id"
+                            id="p_id"
+                            required
+                            disabled
+                        />
+                        <div class="validation" id="err_name"></div>
+                    </div>
                 </div>
-            </div>
-            <div class="input-together">
-                <div class="input-name">Product Name :</div>
-                <div class="input-section">
-                    <input type="text" name="p_name" id="p_name" required />
-                    <div class="validation" id="err_name"></div>
+                <div class="input-together">
+                    <div class="input-name">Product Name :</div>
+                    <div class="input-section">
+                        <input type="text" name="p_name" id="p_name" required />
+                        <div class="validation" id="err_name"></div>
+                    </div>
                 </div>
-            </div>
-            <div class="input-together">
-                <div class="input-name">Price :</div>
-                <div class="input-section">
-                    <input type="number" name="p_price" id="p_price" required />
-                    <div class="validation" id="err_price"></div>
+                <div class="input-together">
+                    <div class="input-name">Price :</div>
+                    <div class="input-section">
+                        <input
+                            type="number"
+                            name="p_price"
+                            id="p_price"
+                            required
+                        />
+                        <div class="validation" id="err_price"></div>
+                    </div>
                 </div>
-            </div>
-            <div class="input-together">
-                <div class="input-name">Description :</div>
-                <div class="input-section">
-                    <textarea name="p_desc" id="p_desc" placeholder="Type Product Description Here..."
-                        required></textarea>
-                    <div class="validation" id="err_desc"></div>
+                <div class="input-together">
+                    <div class="input-name">Description :</div>
+                    <div class="input-section">
+                        <textarea
+                            name="p_desc"
+                            id="p_desc"
+                            placeholder="Type Product Description Here..."
+                            required
+                        ></textarea>
+                        <div class="validation" id="err_desc"></div>
+                    </div>
                 </div>
-            </div>
-            <div class="input-together">
-                <div class="input-name">Image URL:</div>
-                <div class="input-section">
-                    <input type="text" name="p_img" id="p_img" required />
-                    <div class="validation" id="err_img"></div>
+                <div class="input-together">
+                    <div class="input-name">Image URL:</div>
+                    <div class="input-section">
+                        <input type="text" name="p_img" id="p_img" required />
+                        <div class="validation" id="err_img"></div>
+                    </div>
                 </div>
-            </div>
-            <div class="input-together">
-                <div class="input-name"></div>
-                <div class="input-section">
-                    <button class="btn_ btn-edit" id="update_btn">
-                        Update Product
-                    </button>
-                    &nbsp; &nbsp;
-                    <button class="btn_" id="cancle_btn">Cancle</button>
+                <div class="input-together">
+                    <div class="input-name"></div>
+                    <div class="input-section">
+                        <button class="btn_ btn-edit" id="update_btn">
+                            Update Product
+                        </button>
+                        &nbsp; &nbsp;
+                        <button class="btn_" id="cancle_btn">Cancle</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <div class="overlay"></div>
-    <div class="alert">
-        <p></p>
-        <div class="progress"></div>
-    </div>
-</body>
-
+        <div class="alert">
+            <p></p>
+            <div class="progress"></div>
+        </div>
+    </body>
 </html>

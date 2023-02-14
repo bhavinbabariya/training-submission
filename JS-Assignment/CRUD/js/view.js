@@ -27,7 +27,6 @@ const getandSetProductData = () => {
 
     const product = products.find((p) => p.id === id);
 
-    console.log(product);
     ProductData.p_id.innerHTML = product.id;
 
     ProductData.p_name.innerHTML = product.name;

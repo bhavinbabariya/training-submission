@@ -204,3 +204,7 @@ th {
     color: white;
     background-color: #dc3545;
 }
+
+.delete-btn-group {
+    margin-top: 20px;
+}

@@ -14,8 +14,6 @@ const UpdateForm = {
 };
 
 const updateData = () => {
-    console.log(UpdateForm.p_img.files);
-
     const newProduct = {};
     newProduct.name = UpdateForm.p_name.value;
     newProduct.price = UpdateForm.p_price.value;
@@ -69,27 +67,18 @@ const validateForm = () => {
 
 // Handle Submit Event
 UpdateForm.update_btn.addEventListener("click", () => {
-    try {
-        if (validateForm()) {
-            updateData();
-            setTimeout(() => {
-                window.location.replace("/");
-            }, 2000);
-        }
-    } catch (err) {
-        console.error(err);
+    if (validateForm()) {
+        updateData();
+        setTimeout(() => {
+            window.location.replace("/");
+        }, 2000);
     }
 });
 
 // Cancle Button
 UpdateForm.cancle_btn.addEventListener("click", (e) => {
-    try {
-        e.preventDefault();
-        console.log("Cancle Button");
-        window.location.replace("/");
-    } catch (err) {
-        console.error(err);
-    }
+    e.preventDefault();
+    window.location.replace("/");
 });
 
 // Initially call : get data and set to update form
@@ -98,7 +87,6 @@ const getandSetProductData = () => {
     const products = JSON.parse(localStorage.getItem("products"));
 
     const product = products.find((p) => p.id === id);
-    console.log(product);
     UpdateForm.p_id.value = product.id;
 
     UpdateForm.p_name.value = product.name;
