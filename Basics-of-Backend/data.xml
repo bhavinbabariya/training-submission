@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root>
+	<orders>
+		<orderno>4545213690</orderno>
+		<date>June 30, 2022 1:54:21 PM</date>
+		<trackingno>52123</trackingno>
+		<customer>
+			<customerid>785612</customerid>
+			<fname>Bhavin</fname>
+			<lname>Babariya</lname>
+			<address>55,amipark society</address>
+			<city>surat</city>
+			<state>GJ</state>
+			<zip>395010</zip>
+		</customer>
+	</orders>
+	<orders>
+		<orderno>4545213691</orderno>
+		<date>June 30, 2022 2:04:30 PM</date>
+		<trackingno>52124</trackingno>
+		<customer>
+			<customerid>652345</customerid>
+			<fname>Jenil</fname>
+			<lname>Bhalala</lname>
+			<address>40,amipark society</address>
+			<city>surat</city>
+			<state>GJ</state>
+			<zip>395010</zip>
+		</customer>
+	</orders>
+	<orders>
+		<orderno>4545213692</orderno>
+		<date>June 30, 2022 2:30:20 PM</date>
+		<trackingno>52124</trackingno>
+		<customer>
+			<customerid>452312</customerid>
+			<fname>Jay</fname>
+			<lname>Savaliya</lname>
+			<address>215,shivnagar society</address>
+			<city>surat</city>
+			<state>GJ</state>
+			<zip>395010</zip>
+		</customer>
+	</orders>
+	<orders>
+		<orderno>4545213693</orderno>
+		<date>June 30, 2022 4:15:00 PM</date>
+		<trackingno>52125</trackingno>
+		<customer>
+			<customerid>326512</customerid>
+			<fname>Hari</fname>
+			<lname>Finaviya</lname>
+			<address>502, Royal Heaven Residency</address>
+			<city>surat</city>
+			<state>GJ</state>
+			<zip>395010</zip>
+		</customer>
+	</orders>
+</root>
