@@ -3,3 +3,7 @@ CRUD/.vscode
 SPA/.vscode
 NodeJS-Basics/create-http-server/node_modules
 NodeJS-Basics/rendering-engine/node_modules
+NodeJS-Basics/rendering-engine/node_modules
+NodeJS-Basics/file-operations/node_modules
+NodeJS-Basics/jwt-authentication/node_modules
+NodeJS-Basics/session-authentication/node_modules

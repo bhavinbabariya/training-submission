@@ -1,0 +1,33 @@
+<%- include('./header.ejs') %>
+
+<section class="text-gray-400 bg-gray-900 body-font h-">
+    <div class="container px-5 py-24 mx-auto">
+        <div class="flex flex-wrap -mx-4 -mb-10 text-center">
+            <% if(data.length === 0){ %>
+            <h1
+                class="sm:text-3xl text-2xl font-medium title-font mb-4 text-white"
+            >
+                No Images Available
+            </h1>
+            <% } else { %> <% for(let obj of data) {%>
+
+            <div class="sm:w-1/2 mb-10 px-4">
+                <div class="rounded-lg h-64 overflow-hidden">
+                    <img
+                        alt="content"
+                        class="object-cover object-center h-full w-full"
+                        src="/static/<%= obj.image%>"
+                    />
+                </div>
+                <h2
+                    class="title-font text-2xl font-medium text-white mt-6 mb-3"
+                >
+                    <%= obj.name%>
+                </h2>
+            </div>
+
+            <% } %> <% } %>
+        </div>
+    </div>
+</section>
+<%- include('./footer.ejs') %>
