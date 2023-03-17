@@ -1,4 +1,7 @@
 const express = require("express");
+const helmet = require("helmet");
+const cors = require("cors");
+
 const fs = require("fs");
 const path = require("path");
 const app = express();
@@ -8,6 +11,13 @@ const MongoDBStore = require("connect-mongodb-session")(session);
 const products = require("./ProductData");
 const validateUser = require("./validateUser");
 
+app.use(cors({ origin: "http://localhost:3000/" }));
+app.use(
+    helmet.contentSecurityPolicy({
+        useDefaults: true,
+        directives: { "img-src": ["'self'", "https: data:"] },
+    })
+);
 app.use(express.urlencoded({ extended: false }));
 
 app.set("view engine", "ejs");
