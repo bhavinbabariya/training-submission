@@ -1,0 +1,52 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcT_muVX9uQJCu8iYdomSdI4bRRmZJY8ELVv7AWcnoA7bAm_cJ8j9iqlob-V9BfgeT9ENtlayWorZGITE6CA_EM2GDx51_wHOwJUIQGGsutjmyIkxoIbwNM4vw&usqp=CAE",
+            "name": "લેધર વૉલેટ",
+            "description": "કાર્ડ્સ અને રોકડ માટે બહુવિધ કમ્પાર્ટમેન્ટ્સ સાથે આકર્ષક અને સ્ટાઇલિશ ચામડાનું વૉલેટ."
+        },
+        {
+            "id": 2,
+            "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQx5wAL-X8VCZ5ULPG3KOT94_BO5ObMOFA97NqE3IX3a2GCYvWVoW7SUo_bFXnPMGpUoqed_FxXG3Q9KSO_omusP1E0nadAyAmpLRToJJ4kFetCJqsQuFKx&usqp=CAE",
+            "name": "વાયરલેસ ઇયરબડ્સ",
+            "description": "બ્લૂટૂથ 5.0 સાથે સાચા વાયરલેસ ઇયરબડ્સ, 6 કલાક સુધીની બેટરી લાઇફ અને ટચ કંટ્રોલ્સ"
+        },
+        {
+            "id": 3,
+            "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRVMLp5-4wA4bcA71ewalsNQW0L4Hf7cB5-zkvj3Ozl3rg_iNk4XWzM7O8sCrLuh7NjIub5OniyGzg5XPmsp58RncnOEZnogmT-nTjQSBjbiv1caWTDftPx&usqp=CAE",
+            "name": "સ્માર્ટવોચ",
+            "description": "હાર્ટ રેટ મોનિટરિંગ, GPS અને 10 દિવસ સુધીની બેટરી લાઇફ સાથે સ્માર્ટવોચ."
+        },
+        {
+            "id": 4,
+            "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRRX60meZSfyrXgNpD47Nw6sJ8ixde_Pcn-3YYJkSgXydNvRkgel311InwX-yoLjB4aD25IQnifbbtx4Ujs2Qeopolu1OrGik-Pt2YAYvH4Mi_5Dq-5f_f7&usqp=CAE",
+            "name": "બ્લૂટૂથ સ્પીકર",
+            "description": "360-ડિગ્રી સાઉન્ડ, વોટરપ્રૂફ ડિઝાઇન અને 12 કલાક સુધીની બેટરી લાઇફ સાથે પોર્ટેબલ બ્લૂટૂથ સ્પીકર."
+        },
+        {
+            "id": 5,
+            "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRgZi8Ffc8qNEmvzwvt7op15I4rteKj1arjZfobZyg3u1erk3jC8yT-trO2ym9XFtv64-tphCmPRFkPHHBkFCk0Q5XfA0pJ-1zefjJeCPMa9eGxUCypuaWP&usqp=CAE",
+            "name": "ઇન્સ્ટન્ટ કેમેરા",
+            "description": "બિલ્ટ-ઇન ફ્લેશ, સેલ્ફી મિરર અને ઓટોમેટિક એક્સપોઝર કંટ્રોલ સાથે ઇન્સ્ટન્ટ કૅમેરો."
+        },
+        {
+            "id": 6,
+            "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcTtKhMQKkWCld2w7UzFo--GRFa5gxZ9H713lusSx6mpi8sodN5DqXofATdBQRdLRALpLBtYxttWg6YzqdxM_kSp7I-ew1VAZYqWtMmfCKyxfSSQGZaedo0Y&usqp=CAE",
+            "name": "એર પ્યુરિફાયર",
+            "description": "સાચું HEPA ફિલ્ટર, ત્રણ પંખાની ગતિ અને શાંત કામગીરી સાથે એર પ્યુરિફાયર."
+        },
+        {
+            "id": 7,
+            "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSUYirrHHc3Px85g12SKmrdrRdZHe-9jQgi8mIy1p4M4-AW7C4bMmxPOpjaGtc6vAU3AG-L-v6yF-zimq2upByUlCMjB7mPD7rV6mLHUOC1MF3aa2ry1fYDoA&usqp=CAE",
+            "name": "ઇલેક્ટ્રિક ટૂથબ્રશ",
+            "description": "બહુવિધ બ્રશિંગ મોડ્સ, પ્રેશર સેન્સર અને બે અઠવાડિયાની બેટરી લાઇફ સાથે ઇલેક્ટ્રિક ટૂથબ્રશ."
+        },
+        {
+            "id": 8,
+            "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRL4heQYHbNo2yNh_yrqlA83rWrWECtZfwG-5sXIFhO0o7ciIjp5XpPR-T-p7wmzFKRo542vLNdlS2U7EXtitHjvvCjZlM5PfxTBADvKLPB4ddkZFzomAHSoQ&usqp=CAE",
+            "name": "સ્માર્ટ થર્મોસ્ટેટ",
+            "description": "વૉઇસ કંટ્રોલ, વાઇ-ફાઇ કનેક્ટિવિટી અને ઊર્જા બચત સુવિધાઓ સાથે સ્માર્ટ થર્મોસ્ટેટ."
+        }
+    ]
+}
