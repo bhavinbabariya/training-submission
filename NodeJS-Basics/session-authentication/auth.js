@@ -13,12 +13,15 @@ router.post("/login", async (req, res, next) => {
         let users = fs.readFileSync("./data.json");
         users = users.toString() === "" ? [] : JSON.parse(users);
 
-        let index = users.findIndex(async (user) => {
-            const isPass = await bcrypt.compare(password, user.password);
-            return user.email === email && isPass;
-        });
+        let user = users.find((user) => user.email === email);
+        let flag = true;
 
-        if (index === -1) {
+        if (user) {
+            const isPass = await bcrypt.compare(password, user.password);
+            if (isPass) flag = false;
+        }
+
+        if (!user && flag) {
             return res.redirect("/login");
         } else {
             req.session.isAuthenticated = true;
