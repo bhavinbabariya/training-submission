@@ -38,6 +38,12 @@ inquirer
             name: "time",
             message: `Enter time in format of 'HH:MM AM/PM' :`,
             default: "10:00 AM",
+            validate: function (input) {
+                if (!validateTime(input)) {
+                    return `Please enter correct time in format of 'HH:MM AM/PM'`;
+                }
+                return true;
+            },
         },
         {
             type: "list",
