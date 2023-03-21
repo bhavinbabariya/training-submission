@@ -21,7 +21,7 @@ router.post("/login", async (req, res, next) => {
             if (isPass) flag = false;
         }
 
-        if (!user && flag) {
+        if (!user || flag) {
             return res.redirect("/login");
         } else {
             req.session.isAuthenticated = true;
