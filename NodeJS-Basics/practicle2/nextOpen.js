@@ -30,15 +30,6 @@ const nextOpen = (input_day) => {
         }
     }
 
-    // console.log("shop status : ", shop_status);
-    // console.log("next open day is : ", index + i);
-
-    // i = total next day
-    // console.log(
-    //     "Date is : ",
-    //     `${"01" + "/0" + (1 + i) + "/2001"} ${shop_status.open}`
-    // );
-
     // set date accordingly
     const next_date = new Date(
         `${"01" + "/" + (1 + i) + "/2001"} ${shop_status.open}`

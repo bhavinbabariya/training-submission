@@ -1,10 +1,7 @@
 const express = require("express");
 const fs = require("fs");
-var bcrypt = require("bcryptjs");
-const app = express();
+const bcrypt = require("bcryptjs");
 const router = express.Router();
-const jwt = require("jsonwebtoken");
-const secret = "authsecret";
 
 router.post("/login", async (req, res, next) => {
     try {
@@ -25,7 +22,7 @@ router.post("/login", async (req, res, next) => {
             return res.redirect("/login");
         } else {
             req.session.isAuthenticated = true;
-            req.session.user = users[index];
+            req.session.user = user;
 
             return req.session.save((err) => {
                 if (err) throw err;

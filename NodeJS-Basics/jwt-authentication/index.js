@@ -1,12 +1,14 @@
 const express = require("express");
 const app = express();
 const cookieParser = require("cookie-parser");
+const dotenv = require("dotenv");
+dotenv.config();
 
 const products = require("./ProductData");
 const validateUser = require("./validateUser");
 
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser("MY SECRET"));
+app.use(cookieParser(process.env.COOKIE_PARSER_SECRET));
 
 app.set("view engine", "ejs");
 app.set("views", "views");

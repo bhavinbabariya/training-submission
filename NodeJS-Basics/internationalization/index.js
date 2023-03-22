@@ -1,11 +1,12 @@
 const express = require("express");
 const helmet = require("helmet");
 const cors = require("cors");
+const dotenv = require("dotenv");
+dotenv.config();
 
-const fs = require("fs");
 const path = require("path");
 const app = express();
-var session = require("express-session");
+const session = require("express-session");
 const MongoDBStore = require("connect-mongodb-session")(session);
 
 const validateUser = require("./validateUser");
@@ -45,7 +46,7 @@ const store = new MongoDBStore({
 
 app.use(
     session({
-        secret: "mysecret",
+        secret: process.env.MONGODB_SESSION_SECRET,
         resave: false,
         saveUninitialized: true,
         store: store,

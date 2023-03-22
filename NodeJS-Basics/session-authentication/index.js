@@ -1,11 +1,11 @@
 const express = require("express");
 const helmet = require("helmet");
 const cors = require("cors");
+const dotenv = require("dotenv");
+dotenv.config();
 
-const fs = require("fs");
-const path = require("path");
 const app = express();
-var session = require("express-session");
+const session = require("express-session");
 const MongoDBStore = require("connect-mongodb-session")(session);
 
 const products = require("./ProductData");
@@ -23,7 +23,7 @@ app.use(express.urlencoded({ extended: false }));
 app.set("view engine", "ejs");
 app.set("views", "views");
 
-const MONGODB_URI = "mongodb://localhost:27017/simform";
+const MONGODB_URI = process.env.MONGODB_URI;
 
 const store = new MongoDBStore({
     uri: MONGODB_URI,
@@ -32,7 +32,7 @@ const store = new MongoDBStore({
 
 app.use(
     session({
-        secret: "mysecret",
+        secret: process.env.MONGODB_SESSION_SECRET,
         resave: false,
         saveUninitialized: true,
         store: store,

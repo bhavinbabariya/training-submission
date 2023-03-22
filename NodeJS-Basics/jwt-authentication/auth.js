@@ -1,13 +1,13 @@
 const express = require("express");
 const fs = require("fs");
+const dotenv = require("dotenv");
+dotenv.config();
 
-const app = express();
 const router = express.Router();
 const jwt = require("jsonwebtoken");
-const secret = "authsecret";
+const secret = process.env.JWT_SECRET;
 
 let id = 1;
-const users = [];
 
 router.post("/login", (req, res) => {
     const { email, password } = req.body;
@@ -16,7 +16,7 @@ router.post("/login", (req, res) => {
     users = JSON.parse(users);
 
     let index = users.findIndex((user) => {
-        return user.email === email && user.password === user.password;
+        return user.email === email && user.password === password;
     });
 
     if (index === -1) {
