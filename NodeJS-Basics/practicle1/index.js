@@ -26,28 +26,35 @@ const timezones = [
     "NPT (Nepal Time)",
 ];
 
-inquirer
-    .prompt([
-        {
-            type: "list",
-            name: "current_timezone",
-            message: "What is the current timezone?",
-            choices: timezones,
-        },
-        {
-            type: "list",
-            name: "convert_to_timezone",
-            message: "In which timezone you want to convert?",
-            choices: timezones,
-        },
-        {
-            type: "input",
-            name: "current_time",
-            message: `Enter time in format of 'HH:MM AM/PM' :`,
-            default: "12:00 AM",
-        },
-    ])
-    .then((answers) => {
+(async function () {
+    try {
+        let answers = await inquirer.prompt([
+            {
+                type: "list",
+                name: "current_timezone",
+                message: "What is the current timezone?",
+                choices: timezones,
+            },
+            {
+                type: "list",
+                name: "convert_to_timezone",
+                message: "In which timezone you want to convert?",
+                choices: timezones,
+            },
+            {
+                type: "input",
+                name: "current_time",
+                message: `Enter time in format of 'HH:MM AM/PM' :`,
+                default: "12:00 AM",
+                validate: function (input) {
+                    if (!validateTime(input)) {
+                        return `Please enter correct time in format of 'HH:MM AM/PM'`;
+                    }
+                    return true;
+                },
+            },
+        ]);
+
         const current_timezone = answers["current_timezone"].split(" ")[0];
         const convert_to_timezone =
             answers["convert_to_timezone"].split(" ")[0];
@@ -72,8 +79,8 @@ inquirer
         console.log(
             `Converted_Timezone_Time (${convert_to_timezone}) : ${converted_time}`
         );
-    })
-    .catch((error) => {
+    } catch (error) {
         console.log(error.message);
         process.exit();
-    });
+    }
+})();
