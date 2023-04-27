@@ -16,7 +16,6 @@ const searchPost = async (req, res, next) => {
         const output = await postService.searchPost(query, page, itemPerPage);
         res.status(200).json({ data: output });
     } catch (error) {
-        console.log(error);
         next(error);
     }
 };

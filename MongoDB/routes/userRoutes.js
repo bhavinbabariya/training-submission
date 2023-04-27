@@ -1,6 +1,9 @@
 const express = require("express");
 const router = express.Router();
 const verifyUser = require("../middleware/verifyUser");
+const validateAuthRequest = require("../middleware/validateAuthRequest");
+const validateQueryParams = require("../middleware/validateQueryParams");
+
 const {
     loginUser,
     registeUser,
@@ -8,8 +11,13 @@ const {
     fetchuserwithPosts,
 } = require("../controllers/userController");
 
-router.post("/login", loginUser);
-router.post("/register", registeUser);
-router.get("/fetchuserwithcomments", verifyUser, fetchUserWithComments);
-router.get("/fetchuserwithPosts", fetchuserwithPosts);
+router.post("/login", validateAuthRequest, loginUser);
+router.post("/register", validateAuthRequest, registeUser);
+router.get(
+    "/fetchuserwithcomments",
+    verifyUser,
+    validateQueryParams,
+    fetchUserWithComments
+);
+router.get("/fetchuserwithPosts", validateQueryParams, fetchuserwithPosts);
 module.exports = router;

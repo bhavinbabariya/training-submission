@@ -39,7 +39,7 @@ const fetchUserWithComments = async (req, res, next) => {
             page,
             itemPerPage
         );
-        res.status(201).json({ success: true, user });
+        res.status(200).json({ success: true, user });
     } catch (error) {
         next(error);
     }
@@ -48,7 +48,7 @@ const fetchUserWithComments = async (req, res, next) => {
 const fetchuserwithPosts = async (req, res, next) => {
     try {
         const data = await userService.fetchuserwithPostCount();
-        res.status(201).json({ success: true, data });
+        res.status(200).json({ success: true, data });
     } catch (error) {
         next(error);
     }

@@ -26,8 +26,7 @@ const fetchCommentData = async (
         throw error;
     }
 
-    const filter = {};
-    filter[field] = order;
+    const filter = { [field]: order };
 
     const output = await Comment.aggregate([
         {

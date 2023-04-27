@@ -37,7 +37,6 @@ const createUser = async (email, password) => {
 
     const user = await User.create({ email, password: newPass });
     delete user["password"];
-    console.log(user);
     return user;
 };
 
