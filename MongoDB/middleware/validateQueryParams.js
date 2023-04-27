@@ -11,7 +11,6 @@ const validateQueryParams = (req, res, next) => {
                 : itemPerPage,
         },
     };
-    console.log("after : ", req.query);
     next();
 };
 
