@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Calculator</title>
+        <link rel="stylesheet" href="./css/style.css" />
+        <script src="./js/index.js" defer></script>
+    </head>
+
+    <body>
+        <div class="grid-container">
+            <div class="grid-item input-element">
+                <input type="text" name="user-input" id="user-input" />
+            </div>
+            <div class="grid-item deg" id="deg">DEG</div>
+            <div class="grid-item f-e">F-E</div>
+            <div class="grid-item output" id="output"></div>
+            <div class="grid-item" id="mc">MC</div>
+            <div class="grid-item" id="mr">MR</div>
+            <div class="grid-item" id="mplus">M+</div>
+            <div class="grid-item" id="mminus">M-</div>
+            <div class="grid-item" id="ms">MS</div>
+            <div class="grid-item trigonometry" id="trigonometry">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    x="0px"
+                    y="0px"
+                    height="15"
+                    viewBox="0 0 50 50"
+                >
+                    <path
+                        d="M 48 0 C 46.894531 0 46 0.894531 46 2 C 46 2.171875 46.019531 2.339844 46.0625 2.5 L 2.5 46.0625 C 2.339844 46.019531 2.171875 46 2 46 C 0.894531 46 0 46.894531 0 48 C 0 49.105469 0.894531 50 2 50 C 2.738281 50 3.371094 49.597656 3.71875 49 L 46.28125 49 C 46.628906 49.597656 47.261719 50 48 50 C 49.105469 50 50 49.105469 50 48 C 50 47.261719 49.597656 46.628906 49 46.28125 L 49 3.71875 C 49.597656 3.371094 50 2.738281 50 2 C 50 0.894531 49.105469 0 48 0 Z M 47 4.4375 L 47 37 L 37 37 L 37 47 L 15.9375 47 C 15.695313 43.90625 14.472656 41.101563 12.53125 38.90625 Z M 39 39 L 47 39 L 47 46.28125 C 46.699219 46.457031 46.457031 46.699219 46.28125 47 L 39 47 Z M 11.09375 40.34375 C 12.675781 42.164063 13.699219 44.460938 13.9375 47 L 4.4375 47 Z"
+                    ></path>
+                </svg>
+                &nbsp; Trigonometry
+                <div
+                    class="sub-grid-container display-no"
+                    id="trigonometry-section"
+                >
+                    <div class="sub-grid-item" id="sin">sin</div>
+                    <div class="sub-grid-item" id="cos">cos</div>
+                    <div class="sub-grid-item" id="tan">tan</div>
+                    <div class="sub-grid-item" id="sec">sec</div>
+                    <div class="sub-grid-item" id="cosec">csc</div>
+                    <div class="sub-grid-item" id="cot">cot</div>
+                </div>
+            </div>
+            <div class="grid-item function" id="function">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    x="0px"
+                    y="0px"
+                    height="15"
+                    viewBox="0 0 30 30"
+                >
+                    <path
+                        d="M22.047,3c-6.277,0-6.98,7.011-7.347,9h-3.268l-0.417,2h3.339c-1.855,11.024-2.65,11.781-3.565,11.781 c-0.83-2.323-1.434-3.066-2.692-3.066c-1.764,0-2.122,1.454-2.122,2.005C5.975,25.958,7,27,9,27c7.403,0,7.993-6.073,9.153-13h3.416 l0.417-2h-3.528c0.371-2.876,0.769-7.035,1.862-7.781c0.181,0.48,0.848,3.066,2.696,3.066c1.986,0,2.152-1.852,2.152-2.07 C25.166,4.551,24.792,3,22.047,3z"
+                    ></path>
+                </svg>
+                Function
+                <div
+                    class="sub-grid-container-2 display-no"
+                    id="function-section"
+                >
+                    <div class="sub-grid-item-2" id="Ceil">⌈x⌉</div>
+                    <div class="sub-grid-item-2" id="Floor">⌊x⌋</div>
+                    <div class="sub-grid-item-2" id="Rand">rand</div>
+                </div>
+            </div>
+            <div class="grid-item" id="x3">x<sup>3</sup></div>
+            <div class="grid-item pie">&pi;</div>
+            <div class="grid-item pie">e</div>
+            <div class="grid-item" id="clear">C</div>
+            <div class="grid-item" id="delete">&larr;</div>
+            <div class="grid-item" id="x2">x<sup>2</sup></div>
+            <div class="grid-item" id="OnebyX">1 <sub>/ X</sub></div>
+            <div class="grid-item" id="Abs">| x |</div>
+            <div class="grid-item" id="exp">exp</div>
+            <div class="grid-item" id="mod">mod</div>
+            <div class="grid-item" id="sroot">2 &radic; x</div>
+            <div class="grid-item key">(</div>
+            <div class="grid-item key">)</div>
+            <div class="grid-item" id="facto">n!</div>
+            <div class="grid-item key">&divide;</div>
+            <div class="grid-item" id="xy">x<sup>y</sup></div>
+            <div class="grid-item number key">7</div>
+            <div class="grid-item number key">8</div>
+            <div class="grid-item number key">9</div>
+            <div class="grid-item key">&times;</div>
+            <div class="grid-item" id="10x">10<sup>x</sup></div>
+            <div class="grid-item number key">4</div>
+            <div class="grid-item number key">5</div>
+            <div class="grid-item number key">6</div>
+            <div class="grid-item key">-</div>
+            <div class="grid-item" id="log">log</div>
+            <div class="grid-item number key">1</div>
+            <div class="grid-item number key">2</div>
+            <div class="grid-item number key">3</div>
+            <div class="grid-item key">+</div>
+            <div class="grid-item" id="ln">ln</div>
+            <div class="grid-item number" id="plusMinus">+ <sub>/ -</sub></div>
+            <div class="grid-item number key">0</div>
+            <div class="grid-item number key">.</div>
+            <div class="grid-item equal" id="equal">=</div>
+        </div>
+    </body>
+</html>
