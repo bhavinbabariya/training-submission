@@ -1,0 +1,469 @@
+openapi: "3.0.3"
+info:
+    title: Shop Management System
+    description: |-
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore 
+        et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    # termsOfService: http://swagger.io/terms/
+    contact:
+        email: bhavin.b@simformsolutions.com
+
+servers:
+    - url: http://localhost:3000
+
+# -----------------TAG---------------------
+tags:
+    - name: user
+      description: Everything about User
+    - name: product
+      description: Everything about Product
+    - name: order
+      description: Everything about Order
+    - name: other
+      description: Everything about rest
+
+# --------------COMPONENTS----------------
+
+components:
+    schemas:
+        User:
+            type: object
+            properties:
+                id:
+                    type: integer
+                    example: 1
+                    readOnly: true
+                firstName:
+                    type: string
+                    example: bhavin
+                lastName:
+                    type: string
+                    example: babariya
+                contact:
+                    type: string
+                    example: 9865237425
+
+        Product:
+            type: object
+            properties:
+                id:
+                    type: integer
+                    example: 1
+                    readOnly: true
+                pName:
+                    type: string
+                    example: parle-G
+                price:
+                    type: integer
+                    example: 20
+
+        CartItem:
+            type: object
+            properties:
+                pid:
+                    type: integer
+                    example: 1
+                quantity:
+                    type: integer
+                    example: 5
+
+        Order:
+            type: object
+            properties:
+                id:
+                    type: integer
+                    example: 1
+                    readOnly: true
+                order_status:
+                    type: string
+                    example: pending
+                expected_delivery:
+                    type: string
+                    example: 2023-04-15
+                orderDate:
+                    type: string
+                    example: 2023-04-05
+                    readOnly: true
+                user_id:
+                    type: integer
+                    example: 10
+                cart:
+                    type: array
+                    items:
+                        $ref: "#/components/schemas/CartItem"
+                    writeOnly: true
+
+        OrderDetails:
+            type: object
+            properties:
+                quantity:
+                    type: integer
+                    example: 5
+                order_id:
+                    type: integer
+                    example: 1
+                product_id:
+                    type: integer
+                    example: 1
+
+# ----------------PATHS---------------------
+
+# ----------------USER----------------------
+paths:
+    /user/fetch-all-user:
+        get:
+            tags:
+                - user
+            description: Find All User of System
+
+            responses:
+                "200":
+                    description: Success
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                properties:
+                                    success:
+                                        type: boolean
+                                    users:
+                                        type: array
+                                        items:
+                                            allOf:
+                                                - $ref: "#/components/schemas/User"
+                                                - type: object
+                                                  properties:
+                                                      order:
+                                                          type: array
+                                                          items:
+                                                              allOf:
+                                                                  - $ref: "#/components/schemas/User"
+                                                                  - type: object
+                                                                    properties:
+                                                                        products:
+                                                                            type: array
+                                                                            items:
+                                                                                allOf:
+                                                                                    - $ref: "#/components/schemas/Product"
+                                                                                    - type: object
+                                                                                      properties:
+                                                                                          order_details:
+                                                                                              $ref: "#/components/schemas/OrderDetails"
+
+    /user/create-user:
+        post:
+            tags:
+                - user
+            description: Create User
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            $ref: "#/components/schemas/User"
+                required: true
+            responses:
+                "200":
+                    description: Success
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                $ref: "#/components/schemas/User"
+
+    # ----------------PRODUCT----------------------
+
+    /product/add-product:
+        post:
+            tags:
+                - product
+            description: Add Product to shop
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            $ref: "#/components/schemas/Product"
+                required: true
+            responses:
+                "200":
+                    description: Success
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                properties:
+                                    success:
+                                        type: boolean
+                                    product:
+                                        $ref: "#/components/schemas/Product"
+
+    /product/fetch-all-product:
+        get:
+            tags:
+                - product
+            description: Find all product in system
+
+            responses:
+                "200":
+                    description: Success
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                properties:
+                                    success:
+                                        type: boolean
+                                    products:
+                                        type: array
+                                        items:
+                                            $ref: "#/components/schemas/Product"
+
+    # ----------------ORDER----------------------
+
+    /order/place-order:
+        post:
+            tags:
+                - order
+            description: Place Order
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            $ref: "#/components/schemas/Order"
+                required: true
+            responses:
+                "200":
+                    description: Success
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                properties:
+                                    success:
+                                        type: boolean
+                                    order:
+                                        $ref: "#/components/schemas/Order"
+                                        properties:
+                                            user:
+                                                $ref: "#/components/schemas/User"
+
+    /order/fetch-all-order:
+        get:
+            tags:
+                - order
+            description: Find all order
+
+            responses:
+                "200":
+                    description: Success
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                properties:
+                                    success:
+                                        type: boolean
+                                    products:
+                                        type: array
+                                        items:
+                                            $ref: "#/components/schemas/Order"
+
+    # ----------------Other----------------------
+
+    /query/1:
+        get:
+            tags:
+                - other
+            summary: All undelievered Order
+
+            responses:
+                "200":
+                    description: Success
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                properties:
+                                    success:
+                                        type: boolean
+                                    query:
+                                        example: allUndeliveredOrders
+                                    orders:
+                                        type: array
+                                        items:
+                                            $ref: "#/components/schemas/Order"
+
+    /query/2:
+        get:
+            tags:
+                - other
+            summary: most recent order
+
+            responses:
+                "200":
+                    description: Success
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                properties:
+                                    success:
+                                        type: boolean
+                                    query:
+                                        example: mostRecentOrders
+                                    orders:
+                                        type: array
+                                        items:
+                                            $ref: "#/components/schemas/Order"
+
+    /query/3:
+        get:
+            tags:
+                - other
+            summary: top five active user
+
+            responses:
+                "200":
+                    description: Success
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                properties:
+                                    success:
+                                        type: boolean
+                                    query:
+                                        example: topFiveActiveUsers
+                                    orders:
+                                        type: array
+                                        items:
+                                            allOf:
+                                                - type: object
+                                                  properties:
+                                                      user_id:
+                                                          type: integer
+                                                          example: 1
+                                                      total_order:
+                                                          type: integer
+                                                          example: 2
+                                                      user:
+                                                          type: object
+                                                          $ref: "#/components/schemas/User"
+
+    /query/4:
+        get:
+            tags:
+                - other
+            summary: Find Inactive User
+
+            responses:
+                "200":
+                    description: Success
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                properties:
+                                    success:
+                                        type: boolean
+                                    query:
+                                        example: findInactiveUsers
+                                    users:
+                                        type: array
+                                        items:
+                                            $ref: "#/components/schemas/User"
+
+    /query/5:
+        get:
+            tags:
+                - other
+            summary: Top five most purchased product
+
+            responses:
+                "200":
+                    description: Success
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                properties:
+                                    success:
+                                        type: boolean
+                                    query:
+                                        example: topFiveMostPurchasedProduct
+                                    products:
+                                        type: array
+                                        items:
+                                            allOf:
+                                                - type: object
+                                                  properties:
+                                                      product_id:
+                                                          type: integer
+                                                          example: 1
+                                                      total_quantity:
+                                                          type: integer
+                                                          example: 2
+                                                      product:
+                                                          type: object
+                                                          $ref: "#/components/schemas/Product"
+
+    /query/6:
+        get:
+            tags:
+                - other
+            summary: Most Expensive Order
+
+            responses:
+                "200":
+                    description: Success
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                properties:
+                                    success:
+                                        type: boolean
+                                    query:
+                                        example: MostExpensiveOrder
+                                    orders:
+                                        type: array
+                                        items:
+                                            type: object
+                                            properties:
+                                                order_id:
+                                                    type: integer
+                                                    example: 2
+                                                total:
+                                                    type: integer
+                                                    example: 100
+
+    /query/7:
+        get:
+            tags:
+                - other
+            summary: Most Cheapest Order
+
+            responses:
+                "200":
+                    description: Success
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                properties:
+                                    success:
+                                        type: boolean
+                                    query:
+                                        example: MostChepestOrder
+                                    orders:
+                                        type: array
+                                        items:
+                                            type: object
+                                            properties:
+                                                order_id:
+                                                    type: integer
+                                                    example: 1
+                                                total:
+                                                    type: integer
+                                                    example: 20
