@@ -25,7 +25,7 @@ export class AppExceptionFilter implements ExceptionFilter {
 
       // If validator throws error then catch
       const res: any = exception.getResponse();
-      if ('message' in res) {
+      if (res.message) {
         msg = res.message;
       }
       logPath = 'http';
