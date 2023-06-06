@@ -13,8 +13,8 @@ export class ProductService {
     private transactionService: TransactionService,
   ) {}
 
-  async create(pName: string, price: number, user: User) {
-    let product = { pName, price, user: user };
+  async create(pName: string, price: number, quantity: number, user: User) {
+    let product = { pName, price, quantity, user: user };
     product = this.productRepo.create(product);
 
     const p = await this.productRepo.save(product);

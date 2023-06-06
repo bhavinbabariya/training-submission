@@ -19,4 +19,13 @@ export class CreateProductDto {
   @IsNotEmpty()
   @Min(0)
   readonly price: number;
+
+  @ApiProperty({
+    type: Number,
+    description: 'quantity',
+    example: 99,
+  })
+  @IsNotEmpty()
+  @Min(0)
+  readonly quantity: number;
 }

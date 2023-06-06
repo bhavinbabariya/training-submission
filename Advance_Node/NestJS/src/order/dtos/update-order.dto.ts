@@ -1,4 +1,4 @@
-import { IsNumber, IsString } from 'class-validator';
+import { IsNumber, IsOptional, IsString } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
 
 export class UpdateOrderDto {
@@ -16,6 +16,7 @@ export class UpdateOrderDto {
     example: '6 , bansari residency, bopal, ahmedabad 326598',
   })
   @IsString()
+  @IsOptional()
   address?: string;
 
   @ApiProperty({
@@ -24,5 +25,6 @@ export class UpdateOrderDto {
     example: 'dispatched',
   })
   @IsString()
+  @IsOptional()
   status?: 'pending' | 'dispatched' | 'fulfilled';
 }
