@@ -3,6 +3,6 @@ FROM node:20-alpine3.17
 WORKDIR /app
 COPY . .
 
+RUN npm install -g nodemon 
 RUN npm install
-
 CMD ["npm","run","start"]

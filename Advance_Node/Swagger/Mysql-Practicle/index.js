@@ -29,7 +29,7 @@ async function init() {
 
     console.log(
         chalk.bgCyan.bold(
-            `Starting Sequelize + Express example on port ${PORT}...`
+            `Starting Sequelize + Express example on portt ${PORT}...`
         )
     );
 

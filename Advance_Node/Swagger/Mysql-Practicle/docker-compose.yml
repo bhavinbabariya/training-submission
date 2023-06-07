@@ -33,6 +33,8 @@ services:
             DB_PASSWORD: password
         depends_on:
             - mysql
+        volumes:
+            - ./:/app
 
 volumes:
     db: {}
