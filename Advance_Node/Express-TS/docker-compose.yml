@@ -26,6 +26,8 @@ services:
             DB: mongodb://${DB_USER}:${DB_PASS}@mongodb:27017/express_mongo_ts?authSource=admin
         depends_on:
             - mongodb
+        volumes:
+            - ./src/:/app/src/
 
 volumes:
     mongodb_data_container: {}
