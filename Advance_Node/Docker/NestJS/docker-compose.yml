@@ -1,0 +1,38 @@
+version: '3'
+services:
+  # MySQL Service
+  mysql:
+    container_name: db_container
+    image: mysql:latest
+    restart: always
+    environment:
+      MYSQL_DATABASE: ${DB_NAME}
+      MYSQL_ROOT_PASSWORD: 'root'
+      MYSQL_USER: 'user'
+      MYSQL_PASSWORD: 'password'
+    env_file:
+      - .env
+    ports:
+      - 5001:3306
+    volumes:
+      - db:/var/lib/mysql
+
+  # NestJS API APP
+  api:
+    container_name: nestjs_app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
+
+    environment:
+      PORT: 3000
+      DB_HOST: mysql
+      DB_USERNAME: user
+      DB_PASSWORD: password
+    depends_on:
+      - mysql
+
+volumes:
+  db: {}
