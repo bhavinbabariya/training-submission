@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>CRUD Application</title>
+        <link rel="stylesheet" href="./css/style.css" />
+        <link rel="stylesheet" href="./css/alert.css" />
+        <link
+            href="https://fonts.googleapis.com/icon?family=Material+Icons"
+            rel="stylesheet"
+        />
+        <script src="./js/index.js" defer></script>
+    </head>
+
+    <body>
+        <header>
+            <div class="left">Fruitwala.com</div>
+        </header>
+
+        <div class="form_container">
+            <h2 class="form-h">Add product</h2>
+            <div id="add_p_form">
+                <div class="input-together">
+                    <div class="input-name">Product Name :</div>
+                    <div class="input-section">
+                        <input type="text" name="p_name" id="p_name" required />
+                        <div class="validation" id="err_name"></div>
+                    </div>
+                </div>
+                <div class="input-together">
+                    <div class="input-name">Price :</div>
+                    <div class="input-section">
+                        <input
+                            type="number"
+                            name="p_price"
+                            id="p_price"
+                            required
+                        />
+                        <div class="validation" id="err_price"></div>
+                    </div>
+                </div>
+                <div class="input-together">
+                    <div class="input-name">Description :</div>
+                    <div class="input-section">
+                        <textarea
+                            name="p_desc"
+                            id="p_desc"
+                            placeholder="Type Product Description Here..."
+                            required
+                        ></textarea>
+                        <div class="validation" id="err_desc"></div>
+                    </div>
+                </div>
+                <div class="input-together">
+                    <div class="input-name">Image URL :</div>
+                    <div class="input-section">
+                        <input type="text" name="p_img" id="p_img" required />
+                        <div class="validation" id="err_img"></div>
+                    </div>
+                </div>
+                <div class="input-together">
+                    <div class="input-name"></div>
+                    <div class="input-section">
+                        <button class="btn_" id="add_p">Add Product</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="data_container">
+            <h1 class="data-h">Products</h1>
+            <div class="filter-group">
+                <input
+                    type="text"
+                    class="filter_input"
+                    placeholder="Filter By ID"
+                    onkeyup="handleFilter(this)"
+                />
+            </div>
+
+            <table id="data-table">
+                <tr class="b-5-s-b">
+                    <th onclick="sortData('id')">
+                        ID
+                        <button class="arrow-btn id0">&uparrow;</button>
+                        <button class="arrow-btn id1">&downarrow;</button>
+                    </th>
+                    <th onclick="sortData('name')">
+                        Product Name
+                        <button class="arrow-btn name0">&uparrow;</button>
+                        <button class="arrow-btn name1">&downarrow;</button>
+                    </th>
+                    <th onclick="sortData('price')">
+                        Price
+                        <button class="arrow-btn price0">&uparrow;</button>
+                        <button class="arrow-btn price1">&downarrow;</button>
+                    </th>
+                    <th>Description</th>
+                    <th>Image</th>
+                    <th>Actions</th>
+                </tr>
+            </table>
+
+            <div class="not-found">No Records Found !!</div>
+        </div>
+
+        <div class="modal hidden">
+            <h3>Are you sure to delete item ?</h3>
+            <div class="delete-btn-group">
+                <button class="btn_ modal-delete" onClick="deleteProduct()">
+                    Delete
+                </button>
+                <button class="btn_" onClick="handleCancle()">Cancle</button>
+            </div>
+        </div>
+        <div class="overlay hidden"></div>
+        <div class="alert">
+            <p></p>
+            <div class="progress"></div>
+        </div>
+    </body>
+</html>

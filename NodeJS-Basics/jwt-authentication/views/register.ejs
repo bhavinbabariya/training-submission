@@ -1,0 +1,36 @@
+<%- include('./header.ejs') %>
+
+<!-- component -->
+<div class="bg-white p-5 max-w-md mx-auto rounded shadow-sm h-screen">
+    <h2 class="text-4xl px-4">Register</h2>
+    <form class="mt-10 space-y-8" action="/auth/register" method="post">
+        <input
+            class="w-full border rounded h-12 px-4 focus:outline-none"
+            placeholder="Email adress "
+            name="email"
+            type="email"
+        />
+
+        <div class="flex items-center">
+            <input
+                class="w-full border rounded h-12 px-4 focus:outline-none -mr-7"
+                placeholder="Password"
+                name="password"
+                type="password"
+            />
+        </div>
+        <div>
+            <div
+                class="flex flex-col md:flex-row md:items-center justify-between"
+            >
+                <input
+                    class="bg-orange-500 text-sm active:bg-gray-700 cursor-pointer font-regular text-white px-4 py-2 rounded uppercase"
+                    type="submit"
+                    value="Register now"
+                />
+            </div>
+        </div>
+    </form>
+</div>
+
+<%- include('./footer.ejs') %>

@@ -1,0 +1,83 @@
+{
+    "UTC": {
+        "full_form": "Coordinated Universal Time",
+        "offset": 0.0
+    },
+
+    "CST": {
+        "full_form": "China Standard Time",
+        "offset": 8.0
+    },
+    "EST": {
+        "full_form": "Eastern Standard Time",
+        "offset": -5.0
+    },
+    "JST": {
+        "full_form": "Japan Standard Time",
+        "offset": 9.0
+    },
+    "IST": {
+        "full_form": "India Standard Time",
+        "offset": 5.5
+    },
+    "PST": {
+        "full_form": "Pacific Standard Time",
+        "offset": -8.0
+    },
+    "GMT": {
+        "full_form": "Greenwich Mean Time",
+        "offset": 0.0
+    },
+    "CET": {
+        "full_form": "Central European Time",
+        "offset": 1.0
+    },
+    "EET": {
+        "full_form": "Eastern European Time",
+        "offset": 2.0
+    },
+    "KST": {
+        "full_form": "Korea Standard Time",
+        "offset": 9.0
+    },
+    "MSK": {
+        "full_form": "Moscow Standard Time",
+        "offset": 3.0
+    },
+    "PHT": {
+        "full_form": "Philippine Time",
+        "offset": 8.0
+    },
+    "BRT": {
+        "full_form": "Brasília Time",
+        "offset": -3.0
+    },
+    "EAST": {
+        "full_form": "Eastern African Time",
+        "offset": 3.0
+    },
+    "WET": {
+        "full_form": "Western European Time",
+        "offset": 0.0
+    },
+    "CAT": {
+        "full_form": "Central Africa Time",
+        "offset": 2.0
+    },
+    "EAT": {
+        "full_form": "Eastern Africa Time",
+        "offset": 3.0
+    },
+    "AST": {
+        "full_form": "Arabia Standard Time",
+        "offset": 3.0
+    },
+    "BTT": {
+        "full_form": "Bhutan Time",
+        "offset": 6.0
+    },
+    "NPT": {
+        "full_form": "Nepal Time",
+        "offset": 5.75
+    }
+}
